@@ -55,10 +55,21 @@ export default function LocationPickerLeaflet({
         zoomControl: false,
       });
 
-      L.tileLayer(OSM_TILE_CONFIG.url, {
+      const tileLayer = L.tileLayer(OSM_TILE_CONFIG.url, {
         attribution: OSM_TILE_CONFIG.attribution,
         maxZoom: 19,
+        subdomains: OSM_TILE_CONFIG.subdomains,
       }).addTo(map);
+
+      // Tự động chuyển đổi tile sang Carto Voyager nếu có sự cố mạng cục bộ
+      tileLayer.on('tileerror', (error: any) => {
+        const tile = error.tile as HTMLImageElement | undefined;
+        if (tile && !tile.dataset.hasFallback) {
+          tile.dataset.hasFallback = '1';
+          const { z, x, y } = error.coords;
+          tile.src = `https://a.basemaps.cartocdn.com/rastertiles/voyager/${z}/${x}/${y}.png`;
+        }
+      });
 
       // Icon Ghim vị trí phản ánh có thể kéo thả
       const pinIcon = L.divIcon({

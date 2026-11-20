@@ -37,14 +37,25 @@ body {
   touch-action: pan-x pan-y;
 }
 
-/* Bảo vệ ảnh mảnh bản đồ OSM khỏi Tailwind reset (max-width: 100%) */
+/* Bảo vệ ảnh mảnh bản đồ OSM khỏi Tailwind reset (max-width: 100%) và chống kẹt kéo chuột trên máy tính */
 .leaflet-container img {
   max-width: none !important;
   max-height: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-user-drag: none !important;
+}
+
+.leaflet-tile-pane {
+  pointer-events: none !important;
 }
 
 .leaflet-tile {
   visibility: inherit !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-user-drag: none !important;
 }
 
 /* Giữ nút zoom/controls bên dưới thanh Header cố định (Header có z-30) */

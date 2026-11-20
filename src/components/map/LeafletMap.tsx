@@ -11,6 +11,7 @@ import {
   AlertTriangle,
   AlertOctagon,
   ShieldCheck,
+  Layers,
 } from 'lucide-react';
 import type * as L from 'leaflet';
 import type { PublicHotspot, School } from '@/types';
@@ -65,6 +66,8 @@ export default function LeafletMap({
   const [mapLoaded, setMapLoaded] = useState(false);
   const [currentZoom, setCurrentZoom] = useState(BIEN_HOA_GEO.defaultZoom);
   const [isLegendOpen, setIsLegendOpen] = useState(false);
+  const [activeTileStyle, setActiveTileStyle] = useState<'osm' | 'voyager'>('osm');
+  const baseTileLayerRef = useRef<L.TileLayer | null>(null);
 
   // 1. Khởi tạo bản đồ Leaflet
   useEffect(() => {
@@ -89,26 +92,46 @@ export default function LeafletMap({
         shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
       });
 
-      // Tạo bản đồ giới hạn phạm vi Biên Hòa cũ (OSM Relation 7154127)
-      // Sử dụng vùng đệm mở rộng và viscosity thấp (0.1) để tránh bị kẹt kéo/thao tác trên màn hình máy tính rộng
+      // Tạo bản đồ với bounds mở rộng và viscosity = 0 để tránh kẹt chuột trên màn hình máy tính rộng
       const map = L.map(mapContainerRef.current, {
         center: [BIEN_HOA_GEO.center.lat, BIEN_HOA_GEO.center.lng],
         zoom: BIEN_HOA_GEO.defaultZoom,
         minZoom: BIEN_HOA_GEO.minZoom,
         maxZoom: BIEN_HOA_GEO.maxZoom,
         maxBounds: [
-          [10.45, 106.35],
-          [11.45, 107.35],
+          [9.0, 104.5],
+          [13.0, 109.5],
         ],
-        maxBoundsViscosity: 0.1,
+        maxBoundsViscosity: 0,
+        dragging: true,
+        scrollWheelZoom: true,
+        doubleClickZoom: true,
+        touchZoom: true,
         zoomControl: false, // Sử dụng controls tùy chỉnh dễ tiếp cận
       });
 
-      // Lớp nền OpenStreetMap tiêu chuẩn
-      L.tileLayer(OSM_TILE_CONFIG.url, {
+      // Lớp nền OpenStreetMap tiêu chuẩn với khả năng chịu lỗi và tự động chuyển đổi máy chủ dự phòng
+      const baseTileLayer = L.tileLayer(OSM_TILE_CONFIG.url, {
         attribution: OSM_TILE_CONFIG.attribution,
         maxZoom: 19,
+        subdomains: OSM_TILE_CONFIG.subdomains,
       }).addTo(map);
+
+      // Bắt sự kiện tileerror để tự động fallback sang Carto Voyager hoặc OSM mirror khác nếu có tile nào lỗi tải
+      baseTileLayer.on('tileerror', (error: any) => {
+        const tile = error.tile as HTMLImageElement | undefined;
+        if (tile && !tile.dataset.fallbackLevel) {
+          tile.dataset.fallbackLevel = '1';
+          const { z, x, y } = error.coords;
+          tile.src = `https://a.basemaps.cartocdn.com/rastertiles/voyager/${z}/${x}/${y}.png`;
+        } else if (tile && tile.dataset.fallbackLevel === '1') {
+          tile.dataset.fallbackLevel = '2';
+          const { z, x, y } = error.coords;
+          tile.src = `https://tile.openstreetmap.de/${z}/${x}/${y}.png`;
+        }
+      });
+
+      baseTileLayerRef.current = baseTileLayer;
 
       // Đường khung viền nhẹ phạm vi địa giới Biên Hòa cũ (OSM Bounding Box chính thức)
       const { south, west, north, east } = BIEN_HOA_GEO.bbox;
@@ -210,6 +233,7 @@ export default function LeafletMap({
         mapInstanceRef.current = null;
         schoolsLayerRef.current = null;
         hotspotsLayerRef.current = null;
+        baseTileLayerRef.current = null;
         markersMap.clear();
       }
     };
@@ -600,6 +624,17 @@ export default function LeafletMap({
     );
   }, []);
 
+  const handleToggleTileStyle = useCallback(() => {
+    if (!baseTileLayerRef.current) return;
+    const nextStyle = activeTileStyle === 'osm' ? 'voyager' : 'osm';
+    setActiveTileStyle(nextStyle);
+    if (nextStyle === 'voyager') {
+      baseTileLayerRef.current.setUrl(OSM_TILE_CONFIG.cartoVoyagerUrl);
+    } else {
+      baseTileLayerRef.current.setUrl(OSM_TILE_CONFIG.url);
+    }
+  }, [activeTileStyle]);
+
   const handleZoomIn = () => {
     if (mapInstanceRef.current) mapInstanceRef.current.zoomIn();
   };
@@ -641,6 +676,18 @@ export default function LeafletMap({
           >
             <RotateCcw className="w-3.5 h-3.5 text-slate-500" />
             <span className="hidden sm:inline">Toàn cảnh Biên Hòa (cũ)</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={handleToggleTileStyle}
+            className="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold transition-all duration-micro ease-emil-out active:scale-95"
+            title="Đổi kiểu nền bản đồ: OSM Chuẩn hoặc Carto Voyager"
+          >
+            <Layers className="w-3.5 h-3.5 text-blue-600" />
+            <span className="hidden sm:inline">
+              {activeTileStyle === 'osm' ? 'Nền: OSM Chuẩn' : 'Nền: Voyager'}
+            </span>
           </button>
         </div>
 

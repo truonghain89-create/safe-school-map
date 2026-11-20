@@ -40,9 +40,17 @@ export const TAM_HIEP_SCHOOL_GEO = {
   publicMapApproved: false,
 };
 
-// 3. Cấu hình Tile Server OpenStreetMap
+// 3. Cấu hình Tile Server OpenStreetMap & Máy chủ dự phòng đa tầng
+// Lưu ý kỹ thuật: Tên miền tile.openstreetmap.org bị nhiễm độc/chặn DNS tại một số nhà mạng VN (Viettel/VNPT)
+// Sử dụng máy chủ OpenStreetMap chính thức (khu vực hóa qua CDN châu Âu/quốc tế) & Carto Voyager (OpenStreetMap Data) để đảm bảo 100% hiển thị
 export const OSM_TILE_CONFIG = {
-  url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  url: process.env.NEXT_PUBLIC_MAP_TILE_URL || 'https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
   attribution:
     '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors | SAFE SCHOOL MAP',
+  subdomains: ['a', 'b', 'c'],
+  maxZoom: 19,
+  minZoom: 11,
+  // Các máy chủ dự phòng đạt chuẩn OpenStreetMap
+  cartoVoyagerUrl: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+  osmDeUrl: 'https://tile.openstreetmap.de/{z}/{x}/{y}.png',
 };
