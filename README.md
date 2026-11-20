@@ -86,13 +86,25 @@ npm run start
 
 ---
 
-## 5. Tiến độ triển khai (Roadmap)
+## 5. Tiến độ triển khai & Kết quả Nghiệm thu
 
-- [x] **M0 – Phân tích và Thiết lập Nền tảng dự án** (Đang nghiệm thu)
-- [ ] **M1 – Cơ sở dữ liệu và Bảo mật (Supabase Schema, RLS, Storage)**
-- [ ] **M2 – Giao diện công khai và Form gửi phản ánh thực tế**
-- [ ] **M3 – Phân hệ Tra cứu và Quản trị duyệt phản ánh**
-- [ ] **M4 – Hoàn thiện Bản đồ công khai Leaflet kết nối dữ liệu thật**
-- [ ] **M5 – Trang Thống kê 4 biểu đồ Recharts**
-- [ ] **M6 – Hoàn thiện, Kiểm thử toàn diện & Triển khai Production**
-- [ ] **M7 – Mở rộng sau MVP (Hỗ trợ AI gợi ý, xuất báo cáo, mở rộng nhiều trường)**
+- [x] **M0 – Phân tích và Thiết lập Nền tảng dự án** (Hoàn thành)
+- [x] **M1 – Cơ sở dữ liệu và Bảo mật (Supabase PostgreSQL, RLS, Storage, Triggers)** (Hoàn thành)
+- [x] **M2 – Giao diện công khai và Form gửi phản ánh thực tế kèm ảnh/tọa độ GPS** (Hoàn thành)
+- [x] **M3 – Phân hệ Tra cứu mã phản ánh & Quản trị kiểm duyệt 4-Eyes Workflow** (Hoàn thành)
+- [x] **M4 – Bản đồ số Leaflet kết nối dữ liệu thực tế 86 trường học TP. Biên Hòa** (Hoàn thành)
+- [x] **M5 – Trang Thống kê 4 biểu đồ Recharts có bộ lọc phân tích theo từng trường học** (Hoàn thành)
+- [x] **M6 – Tích hợp Đa trường học (Prompt 9.5 Multi-School Engine & Routing Logs)** (Hoàn thành)
+- [x] **M7 – Kiểm toán Toàn diện Website (Prompt 10 & 10.1 Full Audit & Security Hardening)** (Hoàn thành)
+
+---
+
+## 6. Danh mục Tệp SQL & Di chuyển Dữ liệu (Supabase Migrations)
+
+Toàn bộ kịch bản cấu hình cơ sở dữ liệu được tổ chức tại thư mục `supabase/`:
+- `supabase/migrations/01` - `09`: Khởi tạo Schema, Enum, Bảng, RLS, Storage Policies, Views, RPCs và Seed Data.
+- `supabase/FULL_SETUP_M1.sql`: Toàn văn thiết lập hệ thống từ đầu.
+- `supabase/MIGRATION_SCHOOLS_BIEN_HOA.sql`: Bộ dữ liệu 86 trường học TP. Biên Hòa đã hiệu chuẩn tọa độ.
+- `supabase/MIGRATION_PROMPT9_PUBLIC_STATS.sql`: RPC thống kê công khai có bảo mật `SECURITY DEFINER`.
+- `supabase/MIGRATION_PROMPT9_5_MULTI_SCHOOL.sql`: Kiến trúc đa trường học, phân cấp quản trị, ghi log định tuyến.
+- `supabase/FIX_BUG_001_AUTH.sql`: Bản vá lỗi định danh GoTrue & cột sinh tự động `confirmed_at` trên PostgreSQL.
