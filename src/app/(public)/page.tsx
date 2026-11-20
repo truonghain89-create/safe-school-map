@@ -36,7 +36,7 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 1: HERO SECTION (Split Layout with Emil Kowalski Staggered Entrance)
          ========================================================================= */}
-      <section className="relative overflow-hidden bg-navy-950 text-white pt-16 sm:pt-20 lg:pt-24 xl:pt-28 pb-28 sm:pb-34 lg:pb-38 xl:pb-44 px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy-950 text-white pt-16 sm:pt-20 lg:pt-24 xl:pt-28 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8">
         {/* Subtle structural grid background */}
         <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
         <div className="absolute top-1/4 -left-48 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
@@ -109,59 +109,76 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Soft bottom edge transition into the light canvas */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-navy-950/80 to-transparent pointer-events-none" />
       </section>
 
       {/* =========================================================================
-          SECTION 2: TRUST & PRIVACY INVARIANTS (Floating 3D Block Cards)
+          SECTION 2: TRUST & PRIVACY INVARIANTS (3 Clean Elevated Cards, Separated from Hero)
          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-14 sm:-mt-16 lg:-mt-20 relative z-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {/* Trục 1: Quyền riêng tư */}
-          <div className="block-elevated rounded-2xl p-6 sm:p-7 space-y-4 group relative overflow-hidden">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold shadow-xs transition-transform duration-micro group-hover:scale-110 border border-blue-100">
-              <EyeOff className="w-6 h-6 text-blue-600" />
+          <div className="block-elevated rounded-2xl p-6 sm:p-8 flex flex-col justify-between h-full group relative overflow-hidden">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold shadow-xs transition-transform duration-micro group-hover:scale-110 border border-blue-100">
+                <EyeOff className="w-6 h-6 text-blue-600" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-blue-600 transition-colors">
+                  Không bắt buộc tên / SĐT
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Người dân hoàn toàn có thể gửi phản ánh ẩn danh. Không có bất kỳ rào cản tài khoản nào đối với cộng đồng khi chia sẻ thông tin an toàn.
+                </p>
+              </div>
             </div>
-            <div className="space-y-1.5">
-              <h3 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-blue-600 transition-colors">
-                Không bắt buộc tên / SĐT
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Người dân hoàn toàn có thể gửi phản ánh ẩn danh. Không có bất kỳ rào cản tài khoản nào đối với cộng đồng khi chia sẻ thông tin an toàn.
-              </p>
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-[11px] font-semibold text-blue-600">Bảo mật thông tin</span>
+              <div className="h-1 w-12 rounded-full bg-blue-500/80 transition-all duration-ui group-hover:w-20" />
             </div>
-            <div className="h-1 w-10 rounded-full bg-blue-500/80 transition-all duration-ui group-hover:w-full" />
           </div>
 
           {/* Trục 2: Bảo mật hình ảnh */}
-          <div className="block-elevated rounded-2xl p-6 sm:p-7 space-y-4 group relative overflow-hidden">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold shadow-xs transition-transform duration-micro group-hover:scale-110 border border-emerald-100">
-              <Lock className="w-6 h-6 text-emerald-600" />
+          <div className="block-elevated rounded-2xl p-6 sm:p-8 flex flex-col justify-between h-full group relative overflow-hidden">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold shadow-xs transition-transform duration-micro group-hover:scale-110 border border-emerald-100">
+                <Lock className="w-6 h-6 text-emerald-600" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-emerald-600 transition-colors">
+                  Ảnh gốc lưu trữ riêng tư
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Hình ảnh gốc được bảo vệ nghiêm ngặt trong phân vùng riêng tư. Hệ thống làm mờ nhận diện và loại bỏ hoàn toàn siêu dữ liệu EXIF trước khi xử lý.
+                </p>
+              </div>
             </div>
-            <div className="space-y-1.5">
-              <h3 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-emerald-600 transition-colors">
-                Ảnh gốc lưu trữ riêng tư
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Hình ảnh gốc được bảo vệ nghiêm ngặt trong phân vùng riêng tư. Hệ thống làm mờ nhận diện và loại bỏ hoàn toàn siêu dữ liệu EXIF trước khi xử lý.
-              </p>
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-[11px] font-semibold text-emerald-600">Quyền riêng tư</span>
+              <div className="h-1 w-12 rounded-full bg-emerald-500/80 transition-all duration-ui group-hover:w-20" />
             </div>
-            <div className="h-1 w-10 rounded-full bg-emerald-500/80 transition-all duration-ui group-hover:w-full" />
           </div>
 
           {/* Trục 3: Thẩm định trách nhiệm */}
-          <div className="block-elevated rounded-2xl p-6 sm:p-7 space-y-4 group relative overflow-hidden">
-            <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-bold shadow-xs transition-transform duration-micro group-hover:scale-110 border border-purple-100">
-              <CheckCircle2 className="w-6 h-6 text-purple-600" />
+          <div className="block-elevated rounded-2xl p-6 sm:p-8 flex flex-col justify-between h-full group relative overflow-hidden">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-bold shadow-xs transition-transform duration-micro group-hover:scale-110 border border-purple-100">
+                <CheckCircle2 className="w-6 h-6 text-purple-600" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-purple-600 transition-colors">
+                  Xác minh bởi nhà trường
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Mọi phản ánh đều được Ban Giám hiệu và Ban ATGT nhà trường thẩm định thủ công, ngăn chặn báo cáo sai lệch gây hoang mang.
+                </p>
+              </div>
             </div>
-            <div className="space-y-1.5">
-              <h3 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-purple-600 transition-colors">
-                Xác minh bởi nhà trường
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Mọi phản ánh đều được Ban Giám hiệu và Ban ATGT nhà trường thẩm định thủ công, ngăn chặn báo cáo sai lệch gây hoang mang.
-              </p>
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-[11px] font-semibold text-purple-600">Trách nhiệm thẩm định</span>
+              <div className="h-1 w-12 rounded-full bg-purple-500/80 transition-all duration-ui group-hover:w-20" />
             </div>
-            <div className="h-1 w-10 rounded-full bg-purple-500/80 transition-all duration-ui group-hover:w-full" />
           </div>
         </div>
       </section>
@@ -169,7 +186,7 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 3: TRƯỜNG THÍ ĐIỂM TRỌNG TÂM (Trường THPT Tam Hiệp)
          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <ScrollReveal>
           <div className="block-elevated-dark text-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-slate-700/80 shadow-2xl relative overflow-hidden ring-1 ring-blue-500/20 card-sheen">
             <div className="absolute right-0 top-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -246,7 +263,7 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 4: SỐ LIỆU TỔNG QUAN & NGUYÊN TẮC TRUNG THỰC DỮ LIỆU
          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <ScrollReveal>
           <SectionHeading
             badge={<Badge variant="primary">Số liệu giám sát</Badge>}
@@ -254,74 +271,82 @@ export default function HomePage() {
             subtitle="Số liệu được tổng hợp trực tiếp từ cơ sở dữ liệu đã qua xác minh. Dữ liệu DEMO được tách riêng và không trộn vào thống kê thực."
           />
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10 sm:mt-12">
             {/* Card 1: Tổng số phản ánh */}
-            <div className="block-elevated rounded-2xl p-6 text-center space-y-2.5 relative group overflow-hidden">
+            <div className="block-elevated rounded-2xl p-6 sm:p-7 text-center flex flex-col items-center justify-between h-full space-y-3 relative group overflow-hidden">
               <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mx-auto transition-transform duration-micro group-hover:scale-110 border border-blue-100 shadow-xs">
                 <Inbox className="w-5 h-5" />
               </div>
-              <span className="text-xs font-semibold text-slate-500 block uppercase tracking-wider">
-                Tổng số phản ánh
-              </span>
-              <div className="text-2xl sm:text-3xl font-extrabold text-navy-950">
-                Chưa có
+              <div className="space-y-1">
+                <span className="text-xs font-semibold text-slate-500 block uppercase tracking-wider">
+                  Tổng số phản ánh
+                </span>
+                <div className="text-2xl sm:text-3xl font-extrabold text-navy-950">
+                  Chưa có
+                </div>
               </div>
-              <span className="text-[11px] text-slate-400 block">
+              <span className="text-[11px] text-slate-400 block pt-1 border-t border-slate-100 w-full">
                 Dữ liệu từ người dân gửi
               </span>
             </div>
 
             {/* Card 2: Điểm cần chú ý đã công khai */}
-            <div className="block-elevated rounded-2xl p-6 text-center space-y-2.5 relative group overflow-hidden">
+            <div className="block-elevated rounded-2xl p-6 sm:p-7 text-center flex flex-col items-center justify-between h-full space-y-3 relative group overflow-hidden">
               <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mx-auto transition-transform duration-micro group-hover:scale-110 border border-amber-100 shadow-xs">
                 <AlertTriangle className="w-5 h-5 text-amber-600" />
               </div>
-              <span className="text-xs font-semibold text-slate-500 block uppercase tracking-wider">
-                Điểm cần chú ý (Hotspots)
-              </span>
-              <div className="text-2xl sm:text-3xl font-extrabold text-amber-600">
-                Chưa có
+              <div className="space-y-1">
+                <span className="text-xs font-semibold text-slate-500 block uppercase tracking-wider">
+                  Điểm cần chú ý (Hotspots)
+                </span>
+                <div className="text-2xl sm:text-3xl font-extrabold text-amber-600">
+                  Chưa có
+                </div>
               </div>
-              <span className="text-[11px] text-slate-400 block">
+              <span className="text-[11px] text-slate-400 block pt-1 border-t border-slate-100 w-full">
                 Đủ 5 điều kiện phê duyệt
               </span>
             </div>
 
             {/* Card 3: Điểm đã xử lý */}
-            <div className="block-elevated rounded-2xl p-6 text-center space-y-2.5 relative group overflow-hidden">
+            <div className="block-elevated rounded-2xl p-6 sm:p-7 text-center flex flex-col items-center justify-between h-full space-y-3 relative group overflow-hidden">
               <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mx-auto transition-transform duration-micro group-hover:scale-110 border border-emerald-100 shadow-xs">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600" />
               </div>
-              <span className="text-xs font-semibold text-slate-500 block uppercase tracking-wider">
-                Điểm đã xử lý
-              </span>
-              <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600">
-                Chưa có
+              <div className="space-y-1">
+                <span className="text-xs font-semibold text-slate-500 block uppercase tracking-wider">
+                  Điểm đã xử lý
+                </span>
+                <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600">
+                  Chưa có
+                </div>
               </div>
-              <span className="text-[11px] text-slate-400 block">
+              <span className="text-[11px] text-slate-400 block pt-1 border-t border-slate-100 w-full">
                 Sau can thiệp phân luồng
               </span>
             </div>
 
             {/* Card 4: Khu vực đang theo dõi */}
-            <div className="block-elevated rounded-2xl p-6 text-center space-y-2.5 relative group overflow-hidden">
+            <div className="block-elevated rounded-2xl p-6 sm:p-7 text-center flex flex-col items-center justify-between h-full space-y-3 relative group overflow-hidden">
               <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center mx-auto transition-transform duration-micro group-hover:scale-110 border border-purple-100 shadow-xs">
                 <School className="w-5 h-5 text-purple-600" />
               </div>
-              <span className="text-xs font-semibold text-slate-500 block uppercase tracking-wider">
-                Khu vực đang theo dõi
-              </span>
-              <div className="text-2xl sm:text-3xl font-extrabold text-navy-950">
-                1 trường
+              <div className="space-y-1">
+                <span className="text-xs font-semibold text-slate-500 block uppercase tracking-wider">
+                  Khu vực đang theo dõi
+                </span>
+                <div className="text-2xl sm:text-3xl font-extrabold text-navy-950">
+                  1 trường
+                </div>
               </div>
-              <span className="text-[11px] text-blue-600 font-semibold block">
+              <span className="text-[11px] text-blue-600 font-semibold block pt-1 border-t border-slate-100 w-full">
                 THPT Tam Hiệp (Đồng Nai)
               </span>
             </div>
           </div>
 
-          <div className="mt-5 text-center">
-            <p className="text-[11px] text-slate-500 bg-slate-100 py-1.5 px-4 rounded-full inline-block border border-slate-200">
+          <div className="mt-8 sm:mt-10 text-center">
+            <p className="text-xs text-slate-500 bg-slate-100/90 py-2 px-5 rounded-full inline-block border border-slate-200 shadow-2xs">
               * Nguyên tắc trung thực dữ liệu: Website không dùng số liệu giả mạo để lấp đầy giao diện khi hệ thống chưa tiếp nhận phản ánh thực tế.
             </p>
           </div>
@@ -331,7 +356,7 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 5: QUY TRÌNH TIẾP NHẬN & XỬ LÝ 5 BƯỚC (Numbered Stagger Cards)
          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <ScrollReveal>
           <SectionHeading
             badge={<Badge variant="navy">Quy trình vận hành</Badge>}
@@ -339,85 +364,100 @@ export default function HomePage() {
             subtitle="Mọi thông tin phản ánh đều tuân thủ quy trình kiểm soát chất lượng nhiều tầng trước khi được phép xuất hiện trên bản đồ công khai."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-4 mt-10 sm:mt-12">
             {/* Bước 1 */}
-            <div className="block-elevated rounded-2xl p-5 space-y-3.5 group relative">
-              <div className="flex items-center justify-between">
-                <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white font-bold flex items-center justify-center text-xs transition-transform duration-micro group-hover:scale-110 shadow-xs ring-2 ring-blue-500/20">
-                  1
-                </span>
-                <span className="text-[10px] text-blue-600 font-semibold uppercase tracking-wider">Cộng đồng</span>
+            <div className="block-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full space-y-3.5 group relative hover:-translate-y-1 transition-all duration-ui">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white font-bold flex items-center justify-center text-xs transition-transform duration-micro group-hover:scale-110 shadow-xs ring-2 ring-blue-500/20">
+                    1
+                  </span>
+                  <span className="text-[10px] text-blue-600 font-semibold uppercase tracking-wider">Cộng đồng</span>
+                </div>
+                <h3 className="text-sm sm:text-base font-bold text-navy-950 group-hover:text-blue-600 transition-colors">
+                  Gửi phản ánh
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Học sinh, phụ huynh và người dân gửi ghi nhận về ùn tắc, dừng đỗ sai hoặc điểm khuất tầm nhìn quanh cổng trường.
+                </p>
               </div>
-              <h3 className="text-sm font-bold text-navy-950 group-hover:text-blue-600 transition-colors">
-                Gửi phản ánh
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Học sinh, phụ huynh và người dân gửi ghi nhận về ùn tắc, dừng đỗ sai hoặc điểm khuất tầm nhìn quanh cổng trường.
-              </p>
+              <div className="h-0.5 w-8 rounded-full bg-blue-500/60 group-hover:w-full transition-all duration-ui" />
             </div>
 
             {/* Bước 2 */}
-            <div className="block-elevated rounded-2xl p-5 space-y-3.5 group relative">
-              <div className="flex items-center justify-between">
-                <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-slate-700 to-slate-900 text-white font-bold flex items-center justify-center text-xs transition-transform duration-micro group-hover:scale-110 shadow-xs ring-2 ring-slate-600/20">
-                  2
-                </span>
-                <span className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Hệ thống</span>
+            <div className="block-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full space-y-3.5 group relative hover:-translate-y-1 transition-all duration-ui">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-slate-700 to-slate-900 text-white font-bold flex items-center justify-center text-xs transition-transform duration-micro group-hover:scale-110 shadow-xs ring-2 ring-slate-600/20">
+                    2
+                  </span>
+                  <span className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Hệ thống</span>
+                </div>
+                <h3 className="text-sm sm:text-base font-bold text-navy-950 group-hover:text-slate-800 transition-colors">
+                  Tiếp nhận thông tin
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Hệ thống lưu trữ trong vùng riêng tư, mã hóa mã tra cứu bảo mật và gắn trạng thái &ldquo;Chờ xác minh&rdquo;.
+                </p>
               </div>
-              <h3 className="text-sm font-bold text-navy-950 group-hover:text-slate-800 transition-colors">
-                Tiếp nhận thông tin
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Hệ thống lưu trữ trong vùng riêng tư, mã hóa mã tra cứu bảo mật và gắn trạng thái &ldquo;Chờ xác minh&rdquo;.
-              </p>
+              <div className="h-0.5 w-8 rounded-full bg-slate-500/60 group-hover:w-full transition-all duration-ui" />
             </div>
 
             {/* Bước 3 */}
-            <div className="block-elevated rounded-2xl p-5 space-y-3.5 group relative">
-              <div className="flex items-center justify-between">
-                <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-white font-bold flex items-center justify-center text-xs transition-transform duration-micro group-hover:scale-110 shadow-xs ring-2 ring-amber-500/20">
-                  3
-                </span>
-                <span className="text-[10px] text-amber-600 font-semibold uppercase tracking-wider">Người xác minh</span>
+            <div className="block-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full space-y-3.5 group relative hover:-translate-y-1 transition-all duration-ui">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-white font-bold flex items-center justify-center text-xs transition-transform duration-micro group-hover:scale-110 shadow-xs ring-2 ring-amber-500/20">
+                    3
+                  </span>
+                  <span className="text-[10px] text-amber-600 font-semibold uppercase tracking-wider">Người xác minh</span>
+                </div>
+                <h3 className="text-sm sm:text-base font-bold text-navy-950 group-hover:text-amber-600 transition-colors">
+                  Xác minh phản ánh
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Cán bộ nhà trường đối chiếu thông tin, kiểm tra hiện trường thực địa. Từ chối bắt buộc phải ghi rõ lý do.
+                </p>
               </div>
-              <h3 className="text-sm font-bold text-navy-950 group-hover:text-amber-600 transition-colors">
-                Xác minh phản ánh
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Cán bộ nhà trường đối chiếu thông tin, kiểm tra hiện trường thực địa. Từ chối bắt buộc phải ghi rõ lý do.
-              </p>
+              <div className="h-0.5 w-8 rounded-full bg-amber-500/60 group-hover:w-full transition-all duration-ui" />
             </div>
 
             {/* Bước 4 */}
-            <div className="block-elevated rounded-2xl p-5 space-y-3.5 group relative">
-              <div className="flex items-center justify-between">
-                <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-purple-600 to-purple-700 text-white font-bold flex items-center justify-center text-xs transition-transform duration-micro group-hover:scale-110 shadow-xs ring-2 ring-purple-500/20">
-                  4
-                </span>
-                <span className="text-[10px] text-purple-600 font-semibold uppercase tracking-wider">Tổng hợp</span>
+            <div className="block-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full space-y-3.5 group relative hover:-translate-y-1 transition-all duration-ui">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-purple-600 to-purple-700 text-white font-bold flex items-center justify-center text-xs transition-transform duration-micro group-hover:scale-110 shadow-xs ring-2 ring-purple-500/20">
+                    4
+                  </span>
+                  <span className="text-[10px] text-purple-600 font-semibold uppercase tracking-wider">Tổng hợp</span>
+                </div>
+                <h3 className="text-sm sm:text-base font-bold text-navy-950 group-hover:text-purple-600 transition-colors">
+                  Tổng hợp Hotspot
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Gom các phản ánh tương tự vào điểm cần chú ý (Hotspot), đánh giá mức độ nguy cơ thủ công (không dùng AI tự động).
+                </p>
               </div>
-              <h3 className="text-sm font-bold text-navy-950 group-hover:text-purple-600 transition-colors">
-                Tổng hợp Hotspot
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Gom các phản ánh tương tự vào điểm cần chú ý (Hotspot), đánh giá mức độ nguy cơ thủ công (không dùng AI tự động).
-              </p>
+              <div className="h-0.5 w-8 rounded-full bg-purple-500/60 group-hover:w-full transition-all duration-ui" />
             </div>
 
             {/* Bước 5 */}
-            <div className="block-elevated rounded-2xl p-5 space-y-3.5 group relative">
-              <div className="flex items-center justify-between">
-                <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 text-white font-bold flex items-center justify-center text-xs transition-transform duration-micro group-hover:scale-110 shadow-xs ring-2 ring-emerald-500/20">
-                  5
-                </span>
-                <span className="text-[10px] text-emerald-600 font-semibold uppercase tracking-wider">Ban Giám Hiệu</span>
+            <div className="block-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full space-y-3.5 group relative hover:-translate-y-1 transition-all duration-ui">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 text-white font-bold flex items-center justify-center text-xs transition-transform duration-micro group-hover:scale-110 shadow-xs ring-2 ring-emerald-500/20">
+                    5
+                  </span>
+                  <span className="text-[10px] text-emerald-600 font-semibold uppercase tracking-wider">Ban Giám Hiệu</span>
+                </div>
+                <h3 className="text-sm sm:text-base font-bold text-navy-950 group-hover:text-emerald-600 transition-colors">
+                  Công khai & Xử lý
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Người phê duyệt duyệt đủ 5 điều kiện để công khai lên bản đồ; phối hợp lực lượng can thiệp và cập nhật tiến độ.
+                </p>
               </div>
-              <h3 className="text-sm font-bold text-navy-950 group-hover:text-emerald-600 transition-colors">
-                Công khai & Xử lý
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Người phê duyệt duyệt đủ 5 điều kiện để công khai lên bản đồ; phối hợp lực lượng can thiệp và cập nhật tiến độ.
-              </p>
+              <div className="h-0.5 w-8 rounded-full bg-emerald-500/60 group-hover:w-full transition-all duration-ui" />
             </div>
           </div>
         </ScrollReveal>
@@ -426,88 +466,94 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 6: GIÁ TRỊ VÀ LỢI ÍCH 3 NHÓM ĐỐI TƯỢNG (Diverse Cards)
          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <ScrollReveal>
-          <div className="bg-slate-100/90 rounded-3xl p-6 sm:p-10 lg:p-12 border border-slate-200">
+          <div className="bg-slate-100/90 rounded-3xl p-6 sm:p-10 lg:p-14 border border-slate-200">
             <SectionHeading
               badge={<Badge variant="primary">Giá trị xã hội</Badge>}
               title="Lợi ích thiết thực cho các bên liên quan"
               subtitle="Dự án hướng đến việc giải quyết những bất cập giao thông bằng dữ liệu tin cậy và giải pháp thực tế."
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-10 sm:mt-12">
               {/* Nhóm 1: Học sinh & Phụ huynh */}
-              <div className="block-elevated rounded-2xl p-6 sm:p-7 space-y-4 bg-white relative group overflow-hidden">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center transition-transform duration-micro group-hover:scale-110 border border-blue-100 shadow-xs">
-                  <Users className="w-6 h-6" />
+              <div className="block-elevated rounded-2xl p-6 sm:p-8 flex flex-col justify-between h-full space-y-4 bg-white relative group overflow-hidden">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center transition-transform duration-micro group-hover:scale-110 border border-blue-100 shadow-xs">
+                    <Users className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-blue-600 transition-colors">
+                    Đối với Học sinh & Phụ huynh
+                  </h3>
+                  <ul className="text-xs sm:text-sm text-slate-600 space-y-2.5 leading-relaxed">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Chủ động nhận biết các điểm giao thông tiềm ẩn rủi ro quanh cổng trường để phòng tránh.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Có kênh thuận tiện gửi phản ánh ẩn danh, không lo bị lộ danh tính hay số điện thoại.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Dễ dàng tra cứu tiến độ xử lý của nhà trường thông qua mã bảo mật được cấp.</span>
+                    </li>
+                  </ul>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-blue-600 transition-colors">
-                  Đối với Học sinh & Phụ huynh
-                </h3>
-                <ul className="text-xs text-slate-600 space-y-2 leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Chủ động nhận biết các điểm giao thông tiềm ẩn rủi ro quanh cổng trường để phòng tránh.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Có kênh thuận tiện gửi phản ánh ẩn danh, không lo bị lộ danh tính hay số điện thoại.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Dễ dàng tra cứu tiến độ xử lý của nhà trường thông qua mã bảo mật được cấp.</span>
-                  </li>
-                </ul>
                 <div className="h-1 w-10 rounded-full bg-blue-500/80 transition-all duration-ui group-hover:w-full" />
               </div>
 
               {/* Nhóm 2: Nhà trường */}
-              <div className="block-elevated rounded-2xl p-6 sm:p-7 space-y-4 bg-white relative group overflow-hidden">
-                <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center transition-transform duration-micro group-hover:scale-110 border border-emerald-100 shadow-xs">
-                  <Building2 className="w-6 h-6" />
+              <div className="block-elevated rounded-2xl p-6 sm:p-8 flex flex-col justify-between h-full space-y-4 bg-white relative group overflow-hidden">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center transition-transform duration-micro group-hover:scale-110 border border-emerald-100 shadow-xs">
+                    <Building2 className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-emerald-600 transition-colors">
+                    Đối với Nhà trường
+                  </h3>
+                  <ul className="text-xs sm:text-sm text-slate-600 space-y-2.5 leading-relaxed">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Có dữ liệu tập trung, khoa học thay vì thông tin phản ánh rời rạc, cảm tính.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Chủ động điều phối đoàn viên, cờ đỏ hỗ trợ phân luồng đúng khung giờ cao điểm.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Có căn cứ dữ liệu rõ ràng để kiến nghị cơ quan quản lý đô thị sơn vạch kẻ hoặc cắm biển cảnh báo.</span>
+                    </li>
+                  </ul>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-emerald-600 transition-colors">
-                  Đối với Nhà trường
-                </h3>
-                <ul className="text-xs text-slate-600 space-y-2 leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Có dữ liệu tập trung, khoa học thay vì thông tin phản ánh rời rạc, cảm tính.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Chủ động điều phối đoàn viên, cờ đỏ hỗ trợ phân luồng đúng khung giờ cao điểm.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Có căn cứ dữ liệu rõ ràng để kiến nghị cơ quan quản lý đô thị sơn vạch kẻ hoặc cắm biển cảnh báo.</span>
-                  </li>
-                </ul>
                 <div className="h-1 w-10 rounded-full bg-emerald-500/80 transition-all duration-ui group-hover:w-full" />
               </div>
 
               {/* Nhóm 3: Cộng đồng */}
-              <div className="block-elevated rounded-2xl p-6 sm:p-7 space-y-4 bg-white relative group overflow-hidden">
-                <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center transition-transform duration-micro group-hover:scale-110 border border-amber-100 shadow-xs">
-                  <HeartHandshake className="w-6 h-6" />
+              <div className="block-elevated rounded-2xl p-6 sm:p-8 flex flex-col justify-between h-full space-y-4 bg-white relative group overflow-hidden">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center transition-transform duration-micro group-hover:scale-110 border border-amber-100 shadow-xs">
+                    <HeartHandshake className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-amber-600 transition-colors">
+                    Đối với Cộng đồng & Đô thị
+                  </h3>
+                  <ul className="text-xs sm:text-sm text-slate-600 space-y-2.5 leading-relaxed">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Giảm thiểu tình trạng ùn tắc cục bộ trên các tuyến đường trục như đường Phạm Văn Thuận.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Hình thành văn hóa dừng đón con trật tự, văn minh của cộng đồng phụ huynh.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Thúc đẩy mô hình công nghệ phục vụ đời sống dân sinh (Civic Tech) đáng tin cậy.</span>
+                    </li>
+                  </ul>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-amber-600 transition-colors">
-                  Đối với Cộng đồng & Đô thị
-                </h3>
-                <ul className="text-xs text-slate-600 space-y-2 leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Giảm thiểu tình trạng ùn tắc cục bộ trên các tuyến đường trục như đường Phạm Văn Thuận.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Hình thành văn hóa dừng đón con trật tự, văn minh của cộng đồng phụ huynh.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Thúc đẩy mô hình công nghệ phục vụ đời sống dân sinh (Civic Tech) đáng tin cậy.</span>
-                  </li>
-                </ul>
                 <div className="h-1 w-10 rounded-full bg-amber-500/80 transition-all duration-ui group-hover:w-full" />
               </div>
             </div>
@@ -518,9 +564,9 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 7: KÊU GỌI HÀNH ĐỘNG CUỐI TRANG (Closing CTA Scroll Reveal)
          ========================================================================= */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
         <ScrollReveal>
-          <div className="relative rounded-3xl bg-gradient-to-b from-navy-900 to-navy-950 p-8 sm:p-12 lg:p-14 text-center text-white space-y-6 shadow-2xl shadow-blue-950/50 overflow-hidden border border-slate-700/80 ring-1 ring-blue-500/20 card-sheen">
+          <div className="relative rounded-3xl bg-gradient-to-b from-navy-900 to-navy-950 p-8 sm:p-12 lg:p-16 text-center text-white space-y-6 sm:space-y-7 shadow-2xl shadow-blue-950/50 overflow-hidden border border-slate-700/80 ring-1 ring-blue-500/20 card-sheen">
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
             <div className="absolute -top-24 -left-24 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />

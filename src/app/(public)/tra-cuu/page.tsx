@@ -64,7 +64,7 @@ export default function TrackingPage() {
   };
 
   return (
-    <div className="flex-1 py-8 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto w-full space-y-8 animate-in fade-in duration-300">
+    <div className="flex-1 py-10 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto w-full space-y-8 sm:space-y-10 animate-in fade-in duration-300">
       <Breadcrumb items={[{ label: 'Tra cứu tiến độ phản ánh' }]} />
 
       {/* Page Header */}

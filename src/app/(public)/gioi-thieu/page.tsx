@@ -23,7 +23,7 @@ import {
 
 export default function AboutPage() {
   return (
-    <div className="flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full space-y-12">
+    <div className="flex-1 py-10 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full space-y-12 sm:space-y-16">
       {/* Breadcrumb */}
       <Breadcrumb items={[{ label: 'Giới thiệu dự án' }]} />
 

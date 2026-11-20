@@ -6,6 +6,19 @@
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   
   /* =========================================================================
+     8-POINT SPACING SYSTEM TOKENS
+     ========================================================================= */
+  --space-2xs: 4px;   /* Micro badges, inline tags */
+  --space-xs: 8px;    /* Icon gaps, tight padding */
+  --space-sm: 12px;   /* Small elements, compact cards */
+  --space-md: 16px;   /* Standard element gap, card padding */
+  --space-lg: 24px;   /* Group spacing, roomy card padding */
+  --space-xl: 32px;   /* Section sub-groups, grid gap */
+  --space-2xl: 48px;  /* Heading to content separation */
+  --space-3xl: 64px;  /* Standard section vertical buffer */
+  --space-4xl: 80px;  /* Major section transition buffer */
+
+  /* =========================================================================
      EMIL KOWALSKI MOTION DESIGN SYSTEM TOKENS
      - Custom curves: ease-out with strong snappy punch
      - Hero entrance: tuned for intentional, elegant marketing entrance (600-750ms)

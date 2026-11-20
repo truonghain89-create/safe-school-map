@@ -350,20 +350,22 @@ export default function SubmitReportPage() {
   // GIAO DIỆN BIỂU MẪU 3 BƯỚC
   // =========================================================================
   return (
-    <div className="flex-1 py-8 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto w-full space-y-6">
+    <div className="flex-1 py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto w-full space-y-8 animate-fade-in">
       {/* Breadcrumb */}
       <Breadcrumb items={[{ label: 'Gửi phản ánh an toàn giao thông' }]} />
 
       {/* Header */}
-      <div className="text-center space-y-2.5">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold tracking-wide uppercase">
-          <Send className="w-3.5 h-3.5 text-blue-600" />
-          <span>Tiếp nhận phản ánh cộng đồng</span>
+      <div className="text-center space-y-3 max-w-xl mx-auto">
+        <div>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200/80 text-xs font-bold tracking-wide uppercase shadow-2xs">
+            <Send className="w-3.5 h-3.5 text-blue-600" />
+            <span>Tiếp nhận phản ánh cộng đồng</span>
+          </span>
         </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-navy-950 tracking-tight">
-          GỬI PHẢN ÁNH
+          GỬI PHẢN ÁNH AN TOÀN
         </h1>
-        <p className="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
           Chia sẻ những vấn đề giao thông bạn quan sát được để cùng xây dựng môi trường đến trường an toàn hơn.
         </p>
       </div>

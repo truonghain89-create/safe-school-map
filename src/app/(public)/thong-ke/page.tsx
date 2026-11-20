@@ -106,7 +106,7 @@ export default function PublicStatisticsPage() {
     : null;
 
   return (
-    <div className="flex-1 py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full space-y-6 animate-fade-in">
+    <div className="flex-1 py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full space-y-8 animate-fade-in">
       {/* 1. Header & Phần giới thiệu */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200/90 pb-6">
         <div className="space-y-2">

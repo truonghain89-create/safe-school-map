@@ -265,24 +265,24 @@ export default function MapPage() {
         </div>
 
         {/* Thống kê nhanh thanh số liệu */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 text-xs">
-          <div className="p-2.5 rounded-xl bg-blue-50/70 border border-blue-200/80 flex items-center justify-between">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3 pt-2 text-xs">
+          <div className="p-2.5 sm:p-3 rounded-xl bg-blue-50/70 border border-blue-200/80 flex items-center justify-between shadow-2xs">
             <span className="text-blue-900 font-medium">Trường học hiển thị:</span>
             <strong className="text-blue-950 font-bold text-sm">{filteredSchools.length} / {schools.length}</strong>
           </div>
-          <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+          <div className="p-2.5 sm:p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-between shadow-2xs">
             <span className="text-slate-600 font-medium">Điểm nguy cơ ATGT:</span>
             <strong className="text-navy-950 font-bold text-sm">{stats.total}</strong>
           </div>
-          <div className="p-2.5 rounded-xl bg-amber-50/60 border border-amber-200/80 flex items-center justify-between">
+          <div className="p-2.5 sm:p-3 rounded-xl bg-amber-50/60 border border-amber-200/80 flex items-center justify-between shadow-2xs">
             <span className="text-amber-800 font-medium">Cần chú ý:</span>
             <strong className="text-amber-950 font-bold text-sm">{stats.attentionNeeded}</strong>
           </div>
-          <div className="p-2.5 rounded-xl bg-rose-50/60 border border-rose-200/80 flex items-center justify-between">
+          <div className="p-2.5 sm:p-3 rounded-xl bg-rose-50/60 border border-rose-200/80 flex items-center justify-between shadow-2xs">
             <span className="text-rose-800 font-medium">Nguy cơ cao:</span>
             <strong className="text-rose-950 font-bold text-sm">{stats.highRisk}</strong>
           </div>
-          <div className="p-2.5 rounded-xl bg-emerald-50/60 border border-emerald-200/80 flex items-center justify-between">
+          <div className="p-2.5 sm:p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/80 flex items-center justify-between col-span-2 sm:col-span-1 shadow-2xs">
             <span className="text-emerald-800 font-medium">Đã khảo sát:</span>
             <strong className="text-emerald-950 font-bold text-sm">{stats.surveyedSafe}</strong>
           </div>

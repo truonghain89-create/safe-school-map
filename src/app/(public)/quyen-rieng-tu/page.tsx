@@ -19,7 +19,7 @@ import { TAM_HIEP_SCHOOL_GEO } from '@/lib/constants/geo';
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full space-y-8">
+    <div className="flex-1 py-10 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full space-y-8 sm:space-y-10">
       {/* Breadcrumb */}
       <Breadcrumb items={[{ label: 'Chính sách Quyền riêng tư & Kênh khiếu nại' }]} />
 

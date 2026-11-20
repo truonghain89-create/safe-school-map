@@ -87,13 +87,13 @@ export function OverviewCards({ metrics, isLoading, isDemo }: OverviewCardsProps
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
       {cards.map((c) => {
         const Icon = c.icon;
         return (
           <div
             key={c.id}
-            className={`block-elevated rounded-2xl p-5 ${c.accent} flex flex-col justify-between group`}
+            className={`block-elevated rounded-2xl p-5 sm:p-6 ${c.accent} flex flex-col justify-between group shadow-2xs hover:shadow-md transition-all duration-ui`}
           >
             {/* Top row: Icon & Status Badge */}
             <div className="flex items-center justify-between gap-2 mb-3">
