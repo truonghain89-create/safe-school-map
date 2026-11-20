@@ -1,0 +1,160 @@
+{
+  "http": [
+    {
+      "path": "/",
+      "name": "Trang chủ (Home)",
+      "status": 200,
+      "duration": 338,
+      "verdict": "PASS",
+      "note": "Status 200 (338ms)"
+    },
+    {
+      "path": "/ban-do",
+      "name": "Bản đồ GIS an toàn (Map)",
+      "status": 200,
+      "duration": 4074,
+      "verdict": "PASS",
+      "note": "Status 200 (4074ms)"
+    },
+    {
+      "path": "/gui-phan-anh",
+      "name": "Gửi phản ánh an toàn (Submit)",
+      "status": 200,
+      "duration": 1346,
+      "verdict": "PASS",
+      "note": "Status 200 (1346ms)"
+    },
+    {
+      "path": "/tra-cuu",
+      "name": "Tra cứu tiến độ (Lookup)",
+      "status": 200,
+      "duration": 1522,
+      "verdict": "PASS",
+      "note": "Status 200 (1522ms)"
+    },
+    {
+      "path": "/thong-ke",
+      "name": "Dashboard thống kê công khai (Stats)",
+      "status": 200,
+      "duration": 1293,
+      "verdict": "PASS",
+      "note": "Status 200 (1293ms)"
+    },
+    {
+      "path": "/gioi-thieu",
+      "name": "Giới thiệu dự án (About)",
+      "status": 200,
+      "duration": 1003,
+      "verdict": "PASS",
+      "note": "Status 200 (1003ms)"
+    },
+    {
+      "path": "/quyen-rieng-tu",
+      "name": "Chính sách quyền riêng tư (Privacy)",
+      "status": 200,
+      "duration": 803,
+      "verdict": "PASS",
+      "note": "Status 200 (803ms)"
+    },
+    {
+      "path": "/dieu-khoan",
+      "name": "Điều khoản sử dụng (Terms)",
+      "status": 200,
+      "duration": 998,
+      "verdict": "PASS",
+      "note": "Status 200 (998ms)"
+    },
+    {
+      "path": "/dang-nhap",
+      "name": "Đăng nhập quản trị (Login)",
+      "status": 200,
+      "duration": 1178,
+      "verdict": "PASS",
+      "note": "Status 200 (1178ms)"
+    },
+    {
+      "path": "/quan-tri",
+      "name": "Dashboard quản trị (Admin Root)",
+      "status": 307,
+      "duration": 658,
+      "verdict": "PASS",
+      "note": "Bảo vệ Auth chuẩn: 307 Redirect tới /dang-nhap?redirect=%2Fquan-tri (658ms)"
+    },
+    {
+      "path": "/quan-tri/phan-anh",
+      "name": "Quản trị phản ánh (Admin Reports)",
+      "status": 307,
+      "duration": 22,
+      "verdict": "PASS",
+      "note": "Bảo vệ Auth chuẩn: 307 Redirect tới /dang-nhap?redirect=%2Fquan-tri%2Fphan-anh (22ms)"
+    },
+    {
+      "path": "/quan-tri/diem-chu-y",
+      "name": "Quản trị điểm nóng (Admin Hotspots)",
+      "status": 307,
+      "duration": 781,
+      "verdict": "PASS",
+      "note": "Bảo vệ Auth chuẩn: 307 Redirect tới /dang-nhap?redirect=%2Fquan-tri%2Fdiem-chu-y (781ms)"
+    },
+    {
+      "path": "/quan-tri/khao-sat",
+      "name": "Quản trị khảo sát (Admin Surveys)",
+      "status": 307,
+      "duration": 37,
+      "verdict": "PASS",
+      "note": "Bảo vệ Auth chuẩn: 307 Redirect tới /dang-nhap?redirect=%2Fquan-tri%2Fkhao-sat (37ms)"
+    },
+    {
+      "path": "/quan-tri/tai-khoan",
+      "name": "Quản trị tài khoản (Admin Accounts)",
+      "status": 307,
+      "duration": 19,
+      "verdict": "PASS",
+      "note": "Bảo vệ Auth chuẩn: 307 Redirect tới /dang-nhap?redirect=%2Fquan-tri%2Ftai-khoan (19ms)"
+    },
+    {
+      "path": "/quan-tri/nhat-ky",
+      "name": "Nhật ký kiểm toán (Admin Audit Logs)",
+      "status": 307,
+      "duration": 27,
+      "verdict": "PASS",
+      "note": "Bảo vệ Auth chuẩn: 307 Redirect tới /dang-nhap?redirect=%2Fquan-tri%2Fnhat-ky (27ms)"
+    }
+  ],
+  "database": [
+    {
+      "item": "public_hotspots_view",
+      "verdict": "PASS",
+      "note": "1 bản ghi"
+    },
+    {
+      "item": "schools",
+      "verdict": "FAIL",
+      "note": "column schools.ward does not exist"
+    },
+    {
+      "item": "rpc_get_public_statistics",
+      "verdict": "PASS",
+      "note": "RPC city-wide thực thi thành công"
+    }
+  ],
+  "security": [
+    {
+      "item": "public_hotspots_view_leak",
+      "verdict": "PASS",
+      "note": "Không lộ PII/tọa độ nhạy cảm"
+    },
+    {
+      "item": "reports_rls",
+      "verdict": "PASS",
+      "note": "RLS filter bảo vệ (0 rows)"
+    },
+    {
+      "item": "storage_bucket_private",
+      "verdict": "PASS",
+      "note": "Bucket private chặn anon (400)"
+    }
+  ],
+  "actions": [],
+  "codebase": []
+}

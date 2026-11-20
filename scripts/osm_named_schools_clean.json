@@ -1,0 +1,892 @@
+[
+  {
+    "name": "Trường tiểu học An Hòa CS2",
+    "lat": "10.88558",
+    "lon": "106.85983"
+  },
+  {
+    "name": "IELTS LISA Junior & Kid - Tiếng Anh Học Thuật Cho Thiếu Niên và Thiếu Nhi",
+    "lat": "10.95653",
+    "lon": "106.84278"
+  },
+  {
+    "name": "Trường Tiểu học Lý Thường Kiệt (Cơ sở 2)",
+    "lat": "10.96690",
+    "lon": "106.87238"
+  },
+  {
+    "name": "UP Dance Studio Cơ Sở Vĩnh Cửu",
+    "lat": "11.01095",
+    "lon": "106.83632"
+  },
+  {
+    "name": "Trường Tiểu học Quang Vinh",
+    "lat": "10.95002",
+    "lon": "106.81330"
+  },
+  {
+    "name": "Trường Trung học cơ sở Quyết Thắng",
+    "lat": "10.94233",
+    "lon": "106.82320"
+  },
+  {
+    "name": "Trường Trung học cơ sở Hùng Vương",
+    "lat": "10.95752",
+    "lon": "106.81298"
+  },
+  {
+    "name": "Trường Trung học cơ sở Trảng Dài",
+    "lat": "10.98122",
+    "lon": "106.85650"
+  },
+  {
+    "name": "Trường Đại học Công nghệ Đồng Nai",
+    "lat": "10.98458",
+    "lon": "106.86967"
+  },
+  {
+    "name": "Trường Tiểu học Tạ Uyên",
+    "lat": "10.88331",
+    "lon": "106.82083"
+  },
+  {
+    "name": "Trường Trung học cơ sở Bình Thắng",
+    "lat": "10.89279",
+    "lon": "106.80876"
+  },
+  {
+    "name": "Trường Tiểu học Nguyễn Khuyến",
+    "lat": "10.89646",
+    "lon": "106.81787"
+  },
+  {
+    "name": "Trường Cao đẳng Công nghệ và Nông lâm Nam Bộ",
+    "lat": "10.89530",
+    "lon": "106.79260"
+  },
+  {
+    "name": "Trường Tiểu học Bình An",
+    "lat": "10.90048",
+    "lon": "106.79238"
+  },
+  {
+    "name": "Trường Tiểu học Nguyễn Khuyến",
+    "lat": "10.89748",
+    "lon": "106.83195"
+  },
+  {
+    "name": "Trường Tiểu học Nguyễn Khắc Hiếu",
+    "lat": "10.94763",
+    "lon": "106.81148"
+  },
+  {
+    "name": "Trường Tiểu học Nguyễn Du",
+    "lat": "10.94520",
+    "lon": "106.81855"
+  },
+  {
+    "name": "Trường Tiểu học Tân Phong 1",
+    "lat": "10.96791",
+    "lon": "106.83753"
+  },
+  {
+    "name": "Trường Tiểu học - Trung học cơ sở - Trung học phổ thông Bùi Thị Xuân",
+    "lat": "10.96407",
+    "lon": "106.84564"
+  },
+  {
+    "name": "Trường Trung học cơ sở Tân Tiến",
+    "lat": "10.96399",
+    "lon": "106.84648"
+  },
+  {
+    "name": "Trường Trung học phổ thông Nguyễn Hữu Cảnh",
+    "lat": "10.90187",
+    "lon": "106.85353"
+  },
+  {
+    "name": "Trường Tiểu học An Hảo",
+    "lat": "10.90756",
+    "lon": "106.84742"
+  },
+  {
+    "name": "Trường Đại học Lạc Hồng",
+    "lat": "10.95327",
+    "lon": "106.80245"
+  },
+  {
+    "name": "Trường Trung học cơ sở Tân Bửu",
+    "lat": "10.95735",
+    "lon": "106.79186"
+  },
+  {
+    "name": "Trường Trung học phổ thông Ngô Quyền",
+    "lat": "10.95419",
+    "lon": "106.82597"
+  },
+  {
+    "name": "Trường Cao đẳng Mỹ thuật trang trí Đồng Nai",
+    "lat": "10.95517",
+    "lon": "106.82748"
+  },
+  {
+    "name": "Trường Tiểu học Trịnh Hoài Đức",
+    "lat": "10.95546",
+    "lon": "106.82786"
+  },
+  {
+    "name": "Trường Trung học cơ sở Trần Hưng Đạo",
+    "lat": "10.95576",
+    "lon": "106.82823"
+  },
+  {
+    "name": "Trường Tiểu học An Bình",
+    "lat": "10.92591",
+    "lon": "106.85091"
+  },
+  {
+    "name": "Trường Trung học phổ thông Nam Hà",
+    "lat": "10.93351",
+    "lon": "106.83135"
+  },
+  {
+    "name": "Trường Tiểu học Hoàng Hoa Thám",
+    "lat": "10.97035",
+    "lon": "106.88468"
+  },
+  {
+    "name": "Trường Tiểu học Trảng Dài",
+    "lat": "10.99210",
+    "lon": "106.86468"
+  },
+  {
+    "name": "Trường Tiểu học Hà Huy Giáp",
+    "lat": "10.98298",
+    "lon": "106.86800"
+  },
+  {
+    "name": "Trường Trung học Cơ sở Trường Sa",
+    "lat": "10.98654",
+    "lon": "106.86670"
+  },
+  {
+    "name": "Trường Trung học cơ sở Lý Tự Trọng",
+    "lat": "10.96901",
+    "lon": "106.89065"
+  },
+  {
+    "name": "Trường Tiểu học Võ Thị Sáu",
+    "lat": "10.96989",
+    "lon": "106.89190"
+  },
+  {
+    "name": "Trường Tiểu học Hòa Bình",
+    "lat": "10.96457",
+    "lon": "106.90590"
+  },
+  {
+    "name": "Trường Trung học cơ sở Võ Trường Toản",
+    "lat": "10.96049",
+    "lon": "106.90681"
+  },
+  {
+    "name": "Trường Tiểu học Chu Văn An",
+    "lat": "10.96983",
+    "lon": "106.91083"
+  },
+  {
+    "name": "Trường Tiểu học Tam Hiệp A",
+    "lat": "10.95243",
+    "lon": "106.85928"
+  },
+  {
+    "name": "Trường Trung cấp Kinh tế - Kỹ thuật số 2",
+    "lat": "10.95356",
+    "lon": "106.85351"
+  },
+  {
+    "name": "Trường Mầm non Tân Mai",
+    "lat": "10.95350",
+    "lon": "106.85148"
+  },
+  {
+    "name": "Trường Tiểu học Nguyễn An Ninh",
+    "lat": "10.95902",
+    "lon": "106.84369"
+  },
+  {
+    "name": "Trường Đại học Đồng Nai",
+    "lat": "10.95897",
+    "lon": "106.86152"
+  },
+  {
+    "name": "Trường Trung học cơ sở An Bình",
+    "lat": "10.93231",
+    "lon": "106.85107"
+  },
+  {
+    "name": "Trường Tiểu học Lê Thị Vân",
+    "lat": "10.93690",
+    "lon": "106.85302"
+  },
+  {
+    "name": "Trường Tiểu học Trần Quốc Tuấn",
+    "lat": "10.93757",
+    "lon": "106.85630"
+  },
+  {
+    "name": "Trường Đại học Đồng Nai (cơ sở 3)",
+    "lat": "10.93449",
+    "lon": "106.86151"
+  },
+  {
+    "name": "Trường Trung học cơ sở Hòa Hưng",
+    "lat": "10.89355",
+    "lon": "106.86480"
+  },
+  {
+    "name": "Trường Trung học cơ sở Lê Quang Định",
+    "lat": "10.95860",
+    "lon": "106.86428"
+  },
+  {
+    "name": "Trường Trung học phổ thông chuyên Lương Thế Vinh",
+    "lat": "10.95785",
+    "lon": "106.86330"
+  },
+  {
+    "name": "Trường Cao đẳng Kỹ thuật – Công nghệ Đồng Nai (cơ sở 4)",
+    "lat": "10.96251",
+    "lon": "106.88010"
+  },
+  {
+    "name": "Trường Trung học cơ sở Bùi Hữu Nghĩa",
+    "lat": "10.96264",
+    "lon": "106.87882"
+  },
+  {
+    "name": "Trường Tiểu học Nguyễn Đình Chiểu",
+    "lat": "10.96334",
+    "lon": "106.87922"
+  },
+  {
+    "name": "Trường Tiểu học-Trung học cơ sở-Trung học phổ thông Đinh Tiên Hoàng",
+    "lat": "10.95922",
+    "lon": "106.87178"
+  },
+  {
+    "name": "Trường Tiểu học Lý Thường Kiệt",
+    "lat": "10.95796",
+    "lon": "106.87281"
+  },
+  {
+    "name": "Trường Cao đẳng Thống kê II",
+    "lat": "10.95738",
+    "lon": "106.87335"
+  },
+  {
+    "name": "Trường Tiểu học Nguyễn Chí Thanh",
+    "lat": "10.92045",
+    "lon": "106.88428"
+  },
+  {
+    "name": "Trường Trung học cơ sở Long Bình",
+    "lat": "10.93950",
+    "lon": "106.87485"
+  },
+  {
+    "name": "Trường Tiểu học Phan Đình Phùng",
+    "lat": "10.94040",
+    "lon": "106.87409"
+  },
+  {
+    "name": "Trường Tiểu học Long Bình Tân",
+    "lat": "10.89867",
+    "lon": "106.85503"
+  },
+  {
+    "name": "Trường Trung học cơ sở Long Bình Tân",
+    "lat": "10.89128",
+    "lon": "106.85095"
+  },
+  {
+    "name": "Trường Tiểu học Tạ Uyên",
+    "lat": "10.89219",
+    "lon": "106.83066"
+  },
+  {
+    "name": "Trường Trung học cơ sở Bình Thắng B",
+    "lat": "10.89787",
+    "lon": "106.81771"
+  },
+  {
+    "name": "Cao đẳng Công nghệ cao Đồng An",
+    "lat": "10.89211",
+    "lon": "106.81154"
+  },
+  {
+    "name": "Trường Tiểu học Kim Đồng",
+    "lat": "10.89865",
+    "lon": "106.81007"
+  },
+  {
+    "name": "Trường Trung học cơ sở Bình An",
+    "lat": "10.89949",
+    "lon": "106.80815"
+  },
+  {
+    "name": "Trường Tiểu học Đoàn Thị Điểm",
+    "lat": "10.90389",
+    "lon": "106.80467"
+  },
+  {
+    "name": "Trường Trung học cơ sở Thống Nhất",
+    "lat": "10.94583",
+    "lon": "106.82803"
+  },
+  {
+    "name": "Trường Trung học phổ thông Trấn Biên",
+    "lat": "10.95210",
+    "lon": "106.86380"
+  },
+  {
+    "name": "Trường Cao đẳng Kỹ thuật - Công nghệ Đồng Nai",
+    "lat": "10.95396",
+    "lon": "106.83590"
+  },
+  {
+    "name": "Trường Quốc tế Bắc Mỹ SNA Marianapolis",
+    "lat": "10.94679",
+    "lon": "106.81933"
+  },
+  {
+    "name": "Trung tâm Dạy nghề Lái xe Sài Gòn",
+    "lat": "10.95882",
+    "lon": "106.83889"
+  },
+  {
+    "name": "Trường Tiểu học Tân Phú",
+    "lat": "11.01206",
+    "lon": "106.84236"
+  },
+  {
+    "name": "Trường Trung học phổ thông Vĩnh Cửu",
+    "lat": "11.01254",
+    "lon": "106.85314"
+  },
+  {
+    "name": "Trường Tiểu học Tân Tiến",
+    "lat": "10.96064",
+    "lon": "106.83937"
+  },
+  {
+    "name": "Trung tâm Dạy nghề Lái xe Sài Gòn",
+    "lat": "10.95999",
+    "lon": "106.83908"
+  },
+  {
+    "name": "Trường Dạy lái xe Thái Sơn",
+    "lat": "10.96233",
+    "lon": "106.88384"
+  },
+  {
+    "name": "Trung tâm Đào tạo Sát hạch Lái xe Hải Vân",
+    "lat": "10.96022",
+    "lon": "106.88172"
+  },
+  {
+    "name": "Trường Trung học phổ thông Lê Quý Đôn",
+    "lat": "10.95680",
+    "lon": "106.84977"
+  },
+  {
+    "name": "Trường Tiểu học-Trung học cơ sở-Trung học phổ thông Lê Quý Đôn",
+    "lat": "10.94942",
+    "lon": "106.82495"
+  },
+  {
+    "name": "Trường Tiểu học-Trung học cơ sở-Trung học phổ thông Thái Bình Dương",
+    "lat": "10.94905",
+    "lon": "106.82522"
+  },
+  {
+    "name": "Trường Tiểu học-Trung học cơ sở-Trung học phổ thông Song ngữ Á Châu",
+    "lat": "10.94913",
+    "lon": "106.82423"
+  },
+  {
+    "name": "Trường Tiểu học Trần Văn Ơn",
+    "lat": "10.92428",
+    "lon": "106.82383"
+  },
+  {
+    "name": "Trường Trung học cơ sở Ngô Gia Tự",
+    "lat": "10.92398",
+    "lon": "106.82304"
+  },
+  {
+    "name": "Trường Trung học cơ sở Nguyễn Văn Trỗi",
+    "lat": "10.91527",
+    "lon": "106.82522"
+  },
+  {
+    "name": "Trường Tiểu học Tân Phong 1 (Cơ sở 2)",
+    "lat": "10.96555",
+    "lon": "106.83737"
+  },
+  {
+    "name": "Trường Trung học cơ sở Tam Hòa",
+    "lat": "10.94603",
+    "lon": "106.86470"
+  },
+  {
+    "name": "Trường Tiểu học Tam Hòa",
+    "lat": "10.94562",
+    "lon": "106.86524"
+  },
+  {
+    "name": "Trường Trung học cơ sở Bình Đa",
+    "lat": "10.93738",
+    "lon": "106.86153"
+  },
+  {
+    "name": "Trường Tiểu học Bình Đa",
+    "lat": "10.93515",
+    "lon": "106.86309"
+  },
+  {
+    "name": "Trường Chính trị Thành phố Đồng Nai",
+    "lat": "10.93307",
+    "lon": "106.86343"
+  },
+  {
+    "name": "Trường Phổ thông Thực hành Sư phạm",
+    "lat": "10.93319",
+    "lon": "106.86489"
+  },
+  {
+    "name": "Trường Tiểu học Nguyễn Tri Phương",
+    "lat": "10.97174",
+    "lon": "106.87341"
+  },
+  {
+    "name": "Trường Tiểu học Nguyễn Tri Phương (cơ sở 2)",
+    "lat": "10.97225",
+    "lon": "106.87370"
+  },
+  {
+    "name": "Trường Trung học cơ sở Tam Hiệp",
+    "lat": "10.94928",
+    "lon": "106.85455"
+  },
+  {
+    "name": "Trường Trung học phổ thông Tam Hiệp",
+    "lat": "10.94151",
+    "lon": "106.86151"
+  },
+  {
+    "name": "Trường Tiểu học Hiệp Hòa",
+    "lat": "10.93665",
+    "lon": "106.83352"
+  },
+  {
+    "name": "Trường Trung học cơ sở Hiệp Hòa",
+    "lat": "10.93673",
+    "lon": "106.83408"
+  },
+  {
+    "name": "Trường Tiểu học Thống Nhất (cơ sở 2)",
+    "lat": "10.95675",
+    "lon": "106.83606"
+  },
+  {
+    "name": "Trường Tiểu học Thống Nhất",
+    "lat": "10.95372",
+    "lon": "106.82836"
+  },
+  {
+    "name": "Trường Tiểu học Hóa An",
+    "lat": "10.93615",
+    "lon": "106.80520"
+  },
+  {
+    "name": "Trường Tiểu học Phan Chu Trinh",
+    "lat": "10.96753",
+    "lon": "106.85127"
+  },
+  {
+    "name": "Trường Tiểu học Phan Chu Trinh (cơ sở 2)",
+    "lat": "10.96637",
+    "lon": "106.84017"
+  },
+  {
+    "name": "Trường Tiểu học-Trung học cơ sở-Trung học phổ thông Song ngữ Lạc Hồng",
+    "lat": "10.95598",
+    "lon": "106.80124"
+  },
+  {
+    "name": "Trường Đại học Lạc Hồng (cơ sở 2)",
+    "lat": "10.95511",
+    "lon": "106.80219"
+  },
+  {
+    "name": "Trường Trung cấp nghề Giao thông Vận tải Đồng Nai",
+    "lat": "10.96856",
+    "lon": "106.79586"
+  },
+  {
+    "name": "Trường Đại học Lạc Hồng (cơ sở 3)",
+    "lat": "10.96365",
+    "lon": "106.78805"
+  },
+  {
+    "name": "Trường Đại học Lạc Hồng (cơ sở Dược)",
+    "lat": "10.96274",
+    "lon": "106.78955"
+  },
+  {
+    "name": "Trường Đại học Lạc Hồng (cơ sở 5)",
+    "lat": "10.95717",
+    "lon": "106.78900"
+  },
+  {
+    "name": "Trường Đại học Lạc Hồng (cơ sở 6)",
+    "lat": "10.95729",
+    "lon": "106.79074"
+  },
+  {
+    "name": "Trường Tiểu học Tân Bửu",
+    "lat": "10.95512",
+    "lon": "106.79392"
+  },
+  {
+    "name": "Trường Đại học Lạc Hồng (cơ sở 4)",
+    "lat": "10.95611",
+    "lon": "106.79800"
+  },
+  {
+    "name": "Trường Trung học phổ thông Lê Hồng Phong",
+    "lat": "10.96863",
+    "lon": "106.88023"
+  },
+  {
+    "name": "Trường Tiểu học Nguyễn Thái Học",
+    "lat": "10.98156",
+    "lon": "106.85814"
+  },
+  {
+    "name": "Trường Tiểu học Bình Hòa",
+    "lat": "10.98173",
+    "lon": "106.79966"
+  },
+  {
+    "name": "Trường Cao đẳng Cơ giới và Thủy lợi (cơ sở Đào tạo)",
+    "lat": "11.01536",
+    "lon": "106.85785"
+  },
+  {
+    "name": "Trường Tiểu học Lê Văn Tám",
+    "lat": "10.95398",
+    "lon": "106.81437"
+  },
+  {
+    "name": "Trường Mầm non Thống Nhất",
+    "lat": "10.94835",
+    "lon": "106.82772"
+  },
+  {
+    "name": "Trung tâm Giáo dục Thường xuyên Thành phố Đồng Nai",
+    "lat": "10.94596",
+    "lon": "106.83100"
+  },
+  {
+    "name": "Trường Tiểu học Bình Đa (cơ sở 2)",
+    "lat": "10.93920",
+    "lon": "106.86065"
+  },
+  {
+    "name": "Trường Cao đẳng Công nghệ và Quản trị Sonadezi",
+    "lat": "10.90737",
+    "lon": "106.85713"
+  },
+  {
+    "name": "Trường Trung học phổ thông Lê Quý Đôn (cơ sở Long Bình Tân)",
+    "lat": "10.90773",
+    "lon": "106.85827"
+  },
+  {
+    "name": "Trường Tiểu học Nguyễn Thị Sáu",
+    "lat": "10.89285",
+    "lon": "106.86558"
+  },
+  {
+    "name": "Trường Song ngữ Bùi Thị Xuân",
+    "lat": "10.96436",
+    "lon": "106.84547"
+  },
+  {
+    "name": "Trường Tiểu học An Hòa",
+    "lat": "10.89478",
+    "lon": "106.86195"
+  },
+  {
+    "name": "Trường Tiểu học Kim Đồng",
+    "lat": "10.91153",
+    "lon": "106.82711"
+  },
+  {
+    "name": "Trường Tiểu học Nguyễn Huệ",
+    "lat": "10.96428",
+    "lon": "106.90290"
+  },
+  {
+    "name": "Trường Tiểu học Phan Bội Châu",
+    "lat": "10.95216",
+    "lon": "106.87676"
+  },
+  {
+    "name": "Trường Tiểu học Phù Đổng",
+    "lat": "10.98161",
+    "lon": "106.89501"
+  },
+  {
+    "name": "Trường Tiểu học Tam Hiệp B",
+    "lat": "10.94211",
+    "lon": "106.85934"
+  },
+  {
+    "name": "Trường Tiểu học Tân Hạnh",
+    "lat": "10.95481",
+    "lon": "106.77995"
+  },
+  {
+    "name": "Trường Trung học cơ sở Tân Hạnh",
+    "lat": "10.95535",
+    "lon": "106.78025"
+  },
+  {
+    "name": "Trường Tiểu học Trần Quốc Toản",
+    "lat": "10.96927",
+    "lon": "106.88851"
+  },
+  {
+    "name": "Trường Tiểu học Thánh Tâm",
+    "lat": "10.97365",
+    "lon": "106.90249"
+  },
+  {
+    "name": "Trường Tiểu học-Trung học cơ sở-Trung học phổ thông Tân Hòa",
+    "lat": "10.97752",
+    "lon": "106.90595"
+  },
+  {
+    "name": "Trường Trung học cơ sở Hoàng Diệu",
+    "lat": "10.97296",
+    "lon": "106.87447"
+  },
+  {
+    "name": "Trường Trung học cơ sở Hoàng Văn Thụ",
+    "lat": "10.95152",
+    "lon": "106.87597"
+  },
+  {
+    "name": "Trường Trung học cơ sở Tân An",
+    "lat": "10.94508",
+    "lon": "106.79795"
+  },
+  {
+    "name": "Trường Trung học phổ thông Nguyễn Trãi",
+    "lat": "10.96743",
+    "lon": "106.89743"
+  },
+  {
+    "name": "Trường Trung học phổ thông Nguyễn Khuyến",
+    "lat": "10.95572",
+    "lon": "106.84326"
+  },
+  {
+    "name": "Trường Trung học phổ thông Chu Văn An",
+    "lat": "10.92979",
+    "lon": "106.80365"
+  },
+  {
+    "name": "Trường Trung cấp Văn hóa Nghệ thuật Đồng Nai",
+    "lat": "10.95546",
+    "lon": "106.82105"
+  },
+  {
+    "name": "Trường Trung học cơ sở Lê Lợi",
+    "lat": "10.95478",
+    "lon": "106.84889"
+  },
+  {
+    "name": "Trường Đại học Trần Đại Nghĩa (Cơ sở 2)",
+    "lat": "10.91170",
+    "lon": "106.87962"
+  },
+  {
+    "name": "Trường Cao đẳng Y tế Đồng Nai",
+    "lat": "10.96360",
+    "lon": "106.89883"
+  },
+  {
+    "name": "Cambridge Biên Hoà (Cơ sở A)",
+    "lat": "10.95551",
+    "lon": "106.82578"
+  },
+  {
+    "name": "Cambridge Biên Hoà (Cơ sở B)",
+    "lat": "10.95552",
+    "lon": "106.82550"
+  },
+  {
+    "name": "Trường Cao đẳng Lê Quý Đôn",
+    "lat": "10.89810",
+    "lon": "106.88189"
+  },
+  {
+    "name": "Trung tâm Bồi dưỡng Chính trị Thành phố Biên Hoà",
+    "lat": "10.95213",
+    "lon": "106.82006"
+  },
+  {
+    "name": "Trường Đại học Công nghệ Miền Đông (cơ sở 1)",
+    "lat": "10.96300",
+    "lon": "106.83947"
+  },
+  {
+    "name": "Phân hiệu Trường Đại học Mở Thành phố Hồ Chí Minh tại Đồng Nai",
+    "lat": "10.90444",
+    "lon": "106.85703"
+  },
+  {
+    "name": "Trung tâm Giáo dục Thường xuyên Thành phố Đồng Nai (cơ sở 2A)",
+    "lat": "10.95044",
+    "lon": "106.81596"
+  },
+  {
+    "name": "Trường Trung học cơ sở Toàn Diện",
+    "lat": "10.92234",
+    "lon": "106.82483"
+  },
+  {
+    "name": "Trường Trung học phổ thông Bình An",
+    "lat": "10.90136",
+    "lon": "106.80690"
+  },
+  {
+    "name": "Trung tâm Giáo dục Thường xuyên Thành phố Đồng Nai (cơ sở 5)",
+    "lat": "10.94502",
+    "lon": "106.82091"
+  },
+  {
+    "name": "Đức Thương",
+    "lat": "10.95506",
+    "lon": "106.82573"
+  },
+  {
+    "name": "Cambridge Bách Khoa",
+    "lat": "10.95499",
+    "lon": "106.82564"
+  },
+  {
+    "name": "Trung tâm Giáo dục Thường xuyên Thành phố Đồng Nai (cơ sở 2B)",
+    "lat": "10.95055",
+    "lon": "106.81544"
+  },
+  {
+    "name": "Trường Tiểu học Chu Văn An",
+    "lat": "11.01940",
+    "lon": "106.85194"
+  },
+  {
+    "name": "Trường Trung học cơ sở Võ Trường Toản",
+    "lat": "10.99615",
+    "lon": "106.80601"
+  },
+  {
+    "name": "Trung tâm Hàn Ngữ PaLi Cơ sở 3",
+    "lat": "10.96843",
+    "lon": "106.85622"
+  },
+  {
+    "name": "Anh Mỹ Group Biên Hòa",
+    "lat": "10.97120",
+    "lon": "106.85329"
+  },
+  {
+    "name": "Trường Tiểu học Tân Phú",
+    "lat": "11.00563",
+    "lon": "106.84115"
+  },
+  {
+    "name": "Trường Trung học cơ sở Tân Phong",
+    "lat": "10.96878",
+    "lon": "106.84228"
+  },
+  {
+    "name": "Trường Trung học cơ sở Nguyễn Bỉnh Khiêm",
+    "lat": "10.96095",
+    "lon": "106.80886"
+  },
+  {
+    "name": "Trường Tiểu học Tân Phong 2",
+    "lat": "10.98465",
+    "lon": "106.83665"
+  },
+  {
+    "name": "IELTS LISA",
+    "lat": "10.95676",
+    "lon": "106.84283"
+  },
+  {
+    "name": "IELTS LISA Junior & Kid - Tiếng Anh Học Thuật Cho Thiếu Niên và Thiếu Nhi",
+    "lat": "10.95655",
+    "lon": "106.84278"
+  },
+  {
+    "name": "Trường Tiểu học Đông An (Cơ sở Tân An)",
+    "lat": "10.90874",
+    "lon": "106.79342"
+  },
+  {
+    "name": "Trường Tiểu học Tân Mai (Cơ sở 2)",
+    "lat": "10.95325",
+    "lon": "106.85222"
+  },
+  {
+    "name": "VUS",
+    "lat": "10.94822",
+    "lon": "106.83211"
+  },
+  {
+    "name": "Cleverlearn",
+    "lat": "10.94837",
+    "lon": "106.83055"
+  },
+  {
+    "name": "Trường Trung học Cơ sở Thạnh Phú",
+    "lat": "11.01117",
+    "lon": "106.83081"
+  },
+  {
+    "name": "Trường Tiểu học Tân Phú",
+    "lat": "11.01049",
+    "lon": "106.82646"
+  },
+  {
+    "name": "Trung tâm Giáo dục Quốc phòng và An ninh",
+    "lat": "10.88958",
+    "lon": "106.80200"
+  },
+  {
+    "name": "Trung tâm Đào tạo & Sát hạch lái xe Đồng An",
+    "lat": "10.89093",
+    "lon": "106.80647"
+  },
+  {
+    "name": "Anh Ngữ Thiên Thần",
+    "lat": "10.97323",
+    "lon": "106.84536"
+  }
+]

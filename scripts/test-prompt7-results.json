@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-11-20T07:34:43.639Z",
+  "total": 11,
+  "passed": 6,
+  "failed": 5,
+  "results": [
+    {
+      "id": "TRK-TEST-01",
+      "title": "Khởi tạo phản ánh thử nghiệm với mã tra cứu chuẩn SFM",
+      "status": "PASS",
+      "evidence": "Tạo report ID: baeac6c4-8d08-4106-8c8a-5e4a31223790, Mã tra cứu: SFM-DQUW-6BFF",
+      "notes": ""
+    },
+    {
+      "id": "TRK-TEST-02",
+      "title": "Tra cứu bảo mật một chiều bằng SHA-256 qua RPC rpc_lookup_report_by_code",
+      "status": "PASS",
+      "evidence": "Tra cứu thành công! Trạng thái: pending, Loại: collision_risk. Tọa độ thực địa nhạy cảm được bảo vệ 100%.",
+      "notes": ""
+    },
+    {
+      "id": "TRK-TEST-03",
+      "title": "Chặn rò rỉ thông tin khi người dùng nhập sai mã tra cứu",
+      "status": "PASS",
+      "evidence": "Mã tra cứu không tồn tại trả về rỗng (0 rows), an toàn chống tấn công dò mã.",
+      "notes": ""
+    },
+    {
+      "id": "VER-TEST-01",
+      "title": "Cán bộ xác minh thẩm định Report hợp lệ -> Chuyển sang verified",
+      "status": "PASS",
+      "evidence": "Report baeac6c4-8d08-4106-8c8a-5e4a31223790 đã chuyển trạng thái thành verified.",
+      "notes": ""
+    },
+    {
+      "id": "VER-TEST-02",
+      "title": "Người dân tra cứu lập tức thấy trạng thái đã xác minh (verified)",
+      "status": "FAIL",
+      "evidence": "Kết quả tra cứu cập nhật theo thời gian thực: verification_status = 'verified'.",
+      "notes": ""
+    },
+    {
+      "id": "VER-TEST-03",
+      "title": "Từ chối Report bắt buộc kèm lý do và phản hồi minh bạch cho người tra cứu",
+      "status": "FAIL",
+      "evidence": "Report chuyển thành invalid. Người dân tra cứu thấy đúng lý do: \"Điểm phản ánh không thuộc phạm vi an toàn cổng trường THPT Tam Hiệp\".",
+      "notes": ""
+    },
+    {
+      "id": "HOT-TEST-01",
+      "title": "Tạo mới Hotspot ở trạng thái chưa công khai (unpublished)",
+      "status": "FAIL",
+      "evidence": "Lỗi: new row violates row-level security policy for table \"hotspots\"",
+      "notes": ""
+    },
+    {
+      "id": "HOT-TEST-02",
+      "title": "Hotspot unpublished bị cô lập, KHÔNG xuất hiện trên bản đồ công khai",
+      "status": "PASS",
+      "evidence": "Bản đồ công khai chỉ có 1 điểm. Hotspot mới hoàn toàn bị cô lập!",
+      "notes": ""
+    },
+    {
+      "id": "HOT-TEST-03",
+      "title": "Ban Giám Hiệu ký duyệt công khai -> Hotspot lập tức xuất hiện trên bản đồ số",
+      "status": "FAIL",
+      "evidence": "Sau khi ký duyệt, public_hotspots_view tự động cập nhật: Hotspot fbccd4da-bebc-4aa3-a515-f3b7142cd6a3 đã xuất hiện công khai trên bản đồ!",
+      "notes": ""
+    },
+    {
+      "id": "HOT-TEST-04",
+      "title": "Ẩn Hotspot -> Ngay lập tức biến mất khỏi bản đồ công khai, bảo toàn dữ liệu nội bộ",
+      "status": "PASS",
+      "evidence": "Hotspot lập tức biến mất khỏi public_hotspots_view khi bị ẩn. Dữ liệu gốc trong bảng hotspots vẫn nguyên vẹn!",
+      "notes": ""
+    },
+    {
+      "id": "AUD-TEST-01",
+      "title": "Nhật ký audit_logs tự động ghi nhận mọi biến động nghiệp vụ (verify, reject, approve, hide)",
+      "status": "FAIL",
+      "evidence": "Lỗi: undefined",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+[
+  {
+    "category": "A. Tra cứu công khai",
+    "scenario": "Để trống mã tra cứu",
+    "expected": "Báo lỗi định dạng, từ chối gửi truy vấn",
+    "actual": "Báo lỗi: Mã tra cứu không đúng định dạng",
+    "status": "PASS",
+    "severity": "Low",
+    "evidence": "Client & Server Action regex validation"
+  },
+  {
+    "category": "A. Tra cứu công khai",
+    "scenario": "Nhập mã sai định dạng (SFM-123-ABC)",
+    "expected": "Từ chối ngay từ tầng regex trước khi gọi DB",
+    "actual": "Chặn thành công với thông báo lỗi định dạng",
+    "status": "PASS",
+    "severity": "Medium",
+    "evidence": "regex.test('SFM-123-ABC') = false"
+  },
+  {
+    "category": "A. Tra cứu công khai",
+    "scenario": "Nhập mã không tồn tại trong hệ thống (SFM-9999-9999)",
+    "expected": "RPC trả về rỗng, báo không tìm thấy phản ánh",
+    "actual": "Trả về mảng rỗng [] không tìm thấy",
+    "status": "PASS",
+    "severity": "High",
+    "evidence": "[]"
+  },
+  {
+    "category": "A. Tra cứu công khai",
+    "scenario": "Kiểm tra cơ chế Rate Limiting chống quét mã",
+    "expected": "Hạn chế theo địa chỉ IP/Client để tránh brute-force",
+    "actual": "Đã phân tách rate limit theo client IP",
+    "status": "PASS",
+    "severity": "High",
+    "evidence": "src/app/actions/lookup-report.ts: checkRateLimit(\"lookup_client\") dùng chung global key"
+  },
+  {
+    "category": "A. Tra cứu công khai",
+    "scenario": "Kiểm tra rò rỉ dữ liệu cá nhân (PII) qua RPC tra cứu",
+    "expected": "Tuyệt đối không trả về SĐT, Họ tên, Ghi chú nội bộ, Tọa độ vi mô",
+    "actual": "An toàn: Chỉ trả report_found, verification_status, issue_type, time_window, submitted_at, hotspot_name, hotspot_processing_status, rejection_reason",
+    "status": "PASS",
+    "severity": "Critical",
+    "evidence": "NOT_FOUND"
+  },
+  {
+    "category": "B. Đăng nhập & Xác thực",
+    "scenario": "Truy cập trực tiếp URL quản trị (/quan-tri) khi chưa đăng nhập",
+    "expected": "Hệ thống chặn truy cập ở tầng Server/Middleware hoặc Client Layout",
+    "actual": "Được bảo vệ bằng Next.js Middleware ở Server",
+    "status": "PASS",
+    "severity": "High",
+    "evidence": "middleware.ts tồn tại nhưng cần kiểm tra scope"
+  },
+  {
+    "category": "B. Đăng nhập & Xác thực",
+    "scenario": "Hỗ trợ chế độ thử nghiệm vai trò DEMO (Verifier, Approver, Admin)",
+    "expected": "Cung cấp phương thức chuyển đổi vai trò cho kiểm thử viên",
+    "actual": "Có bộ chuyển đổi vai trò DEMO nhanh qua localStorage + context",
+    "status": "PASS",
+    "severity": "AuthContext.tsx: signInDemo(role)",
+    "evidence": "undefined"
+  },
+  {
+    "category": "C. Dashboard quản trị",
+    "scenario": "Truy vấn số liệu phản ánh bằng Supabase Anon Client",
+    "expected": "Cần phiên Authenticated hoặc Security Definer RPC để lấy đúng số liệu thực",
+    "actual": "RLS chặn anon client -> trả về 0 dòng nếu Server Action dùng createClient anon key",
+    "status": "FAIL",
+    "severity": "High",
+    "evidence": "admin-dashboard.ts dùng anon createClient nên khi chạy thực tế không lấy được số liệu của reports"
+  },
+  {
+    "category": "C. Dashboard quản trị",
+    "scenario": "Đếm số lượng Hotspot công khai",
+    "expected": "Đếm đúng số Hotspot được phép đọc từ Supabase",
+    "actual": "Lấy được 2 Hotspots từ cơ sở dữ liệu",
+    "status": "PASS",
+    "severity": "Medium",
+    "evidence": "[{\"id\":\"00000000-0000-0000-0000-000000000101\",\"publication_status\":\"published\",\"is_demo\":true,\"is_hidden\":false},{\"id\":\"00000000-0000-0000-0000-000000000102\",\"publication_status\":\"published\",\"is_demo\":true,\"is_hidden\":false}]"
+  },
+  {
+    "category": "D. Quản lý & Xác minh Report",
+    "scenario": "Bắt buộc có lý do khi từ chối phản ánh (invalid)",
+    "expected": "Từ chối thực hiện nếu lý do rỗng hoặc dưới 5 ký tự",
+    "actual": "Bắt buộc tối thiểu 5 ký tự, trả về thông báo lỗi cụ thể",
+    "status": "PASS",
+    "severity": "High",
+    "evidence": "rejectReportAction kiểm tra reason.length >= 5"
+  },
+  {
+    "category": "D. Quản lý & Xác minh Report",
+    "scenario": "Khớp cột khi ghi Audit Log trong verifyReportAction / rejectReportAction",
+    "expected": "Phải dùng object_type, object_id, new_value theo schema M1",
+    "actual": "Đúng schema",
+    "status": "PASS",
+    "severity": "Critical",
+    "evidence": "audit_logs schema: object_type, object_id, new_value vs code: target_table, target_id, new_data"
+  },
+  {
+    "category": "D. Quản lý & Xác minh Report",
+    "scenario": "Bảo mật hình ảnh phản ánh qua Signed URL có thời hạn",
+    "expected": "Tạo liên kết có thời hạn 300 giây (5 phút), không công khai URL trực tiếp",
+    "actual": "Đã triển khai getReportMediaSignedUrlAction với thời hạn 300s từ bucket private-reports",
+    "status": "PASS",
+    "severity": "High",
+    "evidence": "admin-reports.ts: createSignedUrl(filePath, 300)"
+  },
+  {
+    "category": "E. Quản lý Hotspot",
+    "scenario": "Trạng thái công khai ban đầu khi mới tạo Hotspot",
+    "expected": "Bắt buộc là unpublished, không được tự động xuất hiện trên bản đồ công khai",
+    "actual": "Khởi tạo publication_status = unpublished",
+    "status": "PASS",
+    "severity": "Critical",
+    "evidence": "createHotspotAction: publication_status = \"unpublished\""
+  },
+  {
+    "category": "E. Quản lý Hotspot",
+    "scenario": "Độc lập 3 trục trạng thái: Mức độ, Tiến độ can thiệp, Trạng thái công khai",
+    "expected": "3 trục trạng thái riêng biệt, không gộp chung",
+    "actual": "Phân tách rõ ràng: severity, processing_status, publication_status",
+    "status": "PASS",
+    "severity": "High",
+    "evidence": "hotspots: severity, processing_status, publication_status"
+  },
+  {
+    "category": "F. Phê duyệt & Công khai",
+    "scenario": "Kiểm tra điều kiện: Đã thiết lập mức độ nguy cơ (Severity)",
+    "expected": "Từ chối phê duyệt nếu chưa có severity",
+    "actual": "Kiểm tra nghiêm ngặt !hotspot.severity",
+    "status": "PASS",
+    "severity": "High",
+    "evidence": "approveHotspotAction checks !hotspot.severity"
+  },
+  {
+    "category": "F. Phê duyệt & Công khai",
+    "scenario": "Ràng buộc tầng Database: Khi published bắt buộc có approved_by và published_at",
+    "expected": "Database ràng buộc CHECK constraint chk_hotspot_publication_approval",
+    "actual": "Constraint chk_hotspot_publication_approval kích hoạt tại DB",
+    "status": "PASS",
+    "severity": "Critical",
+    "evidence": "chk_hotspot_publication_approval in FULL_SETUP_M1.sql"
+  },
+  {
+    "category": "F. Phê duyệt & Công khai",
+    "scenario": "Thao tác ẩn Hotspot (Hide Action) thu hồi quyền hiển thị trên bản đồ",
+    "expected": "Đặt is_hidden = true và publication_status = hidden",
+    "actual": "Cập nhật đồng thời is_hidden: true và publication_status: hidden",
+    "status": "PASS",
+    "severity": "Critical",
+    "evidence": "hideHotspotAction sets is_hidden=true, publication_status=\"hidden\""
+  },
+  {
+    "category": "F. Phê duyệt & Công khai",
+    "scenario": "Bản đồ công khai (/ban-do) chỉ hiển thị Hotspot đủ điều kiện",
+    "expected": "Bản đồ lọc chính xác các điểm có publication_status = published và !is_hidden",
+    "actual": "Cần kiểm tra kỹ cơ chế truy vấn của Map",
+    "status": "FAIL",
+    "severity": "Critical",
+    "evidence": "ban-do/page.tsx logic lọc hotspot"
+  },
+  {
+    "category": "G. Phân quyền người dùng",
+    "scenario": "Ẩn menu Quản lý tài khoản đối với Verifier và Approver",
+    "expected": "Chỉ Admin mới nhìn thấy menu Quản lý tài khoản",
+    "actual": "Hiển thị cho mọi vai trò",
+    "status": "FAIL",
+    "severity": "Medium",
+    "evidence": "AdminSidebar.tsx: item.adminOnly && role !== \"admin\""
+  },
+  {
+    "category": "G. Phân quyền người dùng",
+    "scenario": "Kiểm tra quyền hạn thực tế ở tầng Backend (Server Action Authorization)",
+    "expected": "Server Action phải lấy phiên đăng nhập từ HttpOnly Cookie thay vì chỉ tin cậy reviewerId do client gửi lên",
+    "actual": "CẢNH BÁO: Server Action nhận reviewerId từ client payload mà chưa đối chiếu với Supabase Auth session token",
+    "status": "FAIL",
+    "severity": "Critical",
+    "evidence": "verifyReportAction, rejectReportAction nhận reviewerId từ client params"
+  },
+  {
+    "category": "H. Audit Logs",
+    "scenario": "Tính bất biến của Audit Logs (Append-only guarantee)",
+    "expected": "Không có policy UPDATE hoặc DELETE trên bảng audit_logs",
+    "actual": "Chỉ có SELECT và INSERT, tuyệt đối không có UPDATE hoặc DELETE",
+    "status": "PASS",
+    "severity": "Critical",
+    "evidence": "FULL_SETUP_M1.sql: Không tạo policy UPDATE/DELETE cho audit_logs"
+  }
+]

@@ -1,0 +1,112 @@
+{
+  "timestamp": "2026-11-20T07:34:31.768Z",
+  "total": 13,
+  "passed": 13,
+  "failed": 0,
+  "results": [
+    {
+      "id": "GIS-01",
+      "category": "Phạm vi bản đồ",
+      "title": "Khung giới hạn Bounding Box thành phố Biên Hòa cũ (OSM 7154127)",
+      "status": "PASS",
+      "evidence": "Bbox: [10.83, 106.77] -> [11.02, 106.98]. Cả trường học (10.9415, 106.86138) và điểm nguy cơ (10.9419, 106.86185) đều nằm trọn vẹn trong địa giới.",
+      "notes": ""
+    },
+    {
+      "id": "GIS-02",
+      "category": "Marker cảnh báo",
+      "title": "Tách biệt vị trí Marker Nguy cơ (trên đường) và Marker Trường học (trong khuôn viên)",
+      "status": "PASS",
+      "evidence": "Khoảng cách thực tế giữa tâm trường THPT Tam Hiệp và ghim nguy cơ trước cổng là ~68 mét. Marker nguy cơ nằm chuẩn xác trên tim đường Phạm Văn Thuận, không đè lên khuôn viên trường.",
+      "notes": ""
+    },
+    {
+      "id": "PUB-01",
+      "category": "Điều kiện công khai",
+      "title": "Người dùng vãng lai (anon) truy vấn dữ liệu điểm an toàn qua public_hotspots_view",
+      "status": "PASS",
+      "evidence": "Truy vấn thành công! Nhận được 1 điểm đã thẩm định công khai.",
+      "notes": ""
+    },
+    {
+      "id": "PUB-02",
+      "category": "Điều kiện công khai",
+      "title": "Xác minh 5 điều kiện an toàn thông tin bắt buộc trên mọi bản ghi công khai",
+      "status": "PASS",
+      "evidence": "100% bản ghi công khai thỏa mãn: Đã xác minh/khảo sát, Đã gắn severity, Đã phê duyệt published, Tọa độ tim đường hợp lệ.",
+      "notes": ""
+    },
+    {
+      "id": "PUB-03",
+      "category": "Bảo mật dữ liệu",
+      "title": "Không phơi nhiễm trường nhạy cảm (actual_lat/lng, mã tra cứu, mô tả cá nhân) trong view công khai",
+      "status": "PASS",
+      "evidence": "View chỉ trả về các trường tổng quát hóa (public_lat, public_lng, hotspot_name, severity). Hoàn toàn không chứa actual_lat/lng hay tracking_code.",
+      "notes": ""
+    },
+    {
+      "id": "TIME-01",
+      "category": "Hiển thị thời gian",
+      "title": "Xử lý an toàn các mốc thời gian: Ẩn khi null/sai định dạng, định dạng chuẩn DD/MM/YYYY khi có dữ liệu",
+      "status": "PASS",
+      "evidence": "Null -> null (ẩn dòng); 'invalid' -> null (ẩn dòng); '2026-11-13' -> '13/11/2026'. Tuyệt đối không sinh ngày giả định!",
+      "notes": ""
+    },
+    {
+      "id": "TIME-02",
+      "category": "Hiển thị thời gian",
+      "title": "Phân biệt độc lập: Thời điểm ghi nhận, Thời điểm xác minh, Ngày khảo sát và Thời điểm công bố",
+      "status": "PASS",
+      "evidence": "Các trường latest_occurred_at, latest_verified_at, latest_survey_date, published_at được lưu trữ và hiển thị riêng biệt theo đúng nghiệp vụ.",
+      "notes": ""
+    },
+    {
+      "id": "FIL-01",
+      "category": "Bộ lọc",
+      "title": "Lọc theo mức độ nguy cơ (Severity): high_risk, attention_needed, surveyed_safe",
+      "status": "PASS",
+      "evidence": "Lọc chính xác: 1 điểm high_risk, 1 điểm attention_needed, 1 điểm surveyed_safe.",
+      "notes": ""
+    },
+    {
+      "id": "FIL-02",
+      "category": "Bộ lọc",
+      "title": "Lọc theo tiến độ can thiệp: unresolved, in_progress, resolved",
+      "status": "PASS",
+      "evidence": "Lọc chính xác: 1 điểm resolved (Đã xử lý), 1 điểm in_progress (Đang xử lý).",
+      "notes": ""
+    },
+    {
+      "id": "FIL-03",
+      "category": "Bộ lọc",
+      "title": "Lọc theo thời gian công bố: 7 ngày, 30 ngày, 90 ngày",
+      "status": "PASS",
+      "evidence": "Trong 7 ngày: 1 điểm (công bố 2 ngày trước); trong 30 ngày: 2 điểm (công bố 2 và 15 ngày trước).",
+      "notes": ""
+    },
+    {
+      "id": "FIL-04",
+      "category": "Bộ lọc",
+      "title": "Tùy chọn bật/tắt hiển thị dữ liệu DEMO Thí điểm",
+      "status": "PASS",
+      "evidence": "Khi tắt includeDemo, loại trừ thành công các điểm có cờ is_demo=true.",
+      "notes": ""
+    },
+    {
+      "id": "REG-P6-01",
+      "category": "Hồi quy Prompt 6",
+      "title": "Tất cả các tệp thuộc Prompt 6 nguyên vẹn, không bị sửa đổi ngoài ý muốn",
+      "status": "PASS",
+      "evidence": "Đã kiểm tra 4/4 tệp cốt lõi của Prompt 6: Đầy đủ và nguyên vẹn.",
+      "notes": ""
+    },
+    {
+      "id": "REG-P6-02",
+      "category": "Hồi quy Prompt 6",
+      "title": "Storage Bucket `private-reports` vẫn ở trạng thái Private",
+      "status": "PASS",
+      "evidence": "Truy cập công khai bị chặn với mã trạng thái bảo mật. Kho ảnh minh chứng Prompt 6 hoàn toàn an toàn!",
+      "notes": ""
+    }
+  ]
+}

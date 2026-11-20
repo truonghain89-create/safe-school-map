@@ -1,0 +1,663 @@
+<USER_REQUEST>
+# PROMPT 9 – XÂY DỰNG TRANG THỐNG KÊ CÔNG KHAI (PUBLIC STATISTICS DASHBOARD)
+## Dự án SAFE SCHOOL MAP – CỔNG TRƯỜNG AN TOÀN
+
+### 1. BỐI CẢNH VÀ TRẠNG THÁI DỰ ÁN
+
+Bạn đang tiếp tục phát triển dự án SAFE SCHOOL MAP – CỔNG TRƯỜNG AN TOÀN trên Google Antigravity.
+
+Các giai đoạn và prompt trước đã được thực hiện:
+
+- M0: Thiết lập nền tảng dự án.
+- M1: Cơ sở dữ liệu, Supabase, Auth, bảo mật và phân quyền.
+- Prompt 4: Thiết kế giao diện, Design System và hiệu ứng.
+- Prompt 5: Xây dựng bản đồ tương tác Leaflet/OpenStreetMap.
+- Prompt 6: Xây dựng chức năng gửi và lưu trữ phản ánh.
+- Prompt 7: Xây dựng chức năng tra cứu và các luồng liên quan.
+- Prompt 8: Xây dựng Dashboard quản trị, xác minh Report và quản lý Hotspot.
+
+**Nhiệm vụ hiện tại: Prompt 9 – Xây dựng và hoàn thiện trang Thống kê công khai.**
+
+Trước khi thực hiện, phải kiểm tra workspace hiện tại để xác định chính xác trạng thái các giai đoạn trên.
+
+Không được mặc định rằng tất cả chức năng đã hoạt động hoàn chỉnh chỉ vì chúng đã được triển khai trước đó.
+
+### 2. MỤC TIÊU
+
+Xây dựng trang Thống kê công khai giúp người truy cập hiểu được tình hình các vấn đề giao thông quanh khu vực trường học thông qua dữ liệu đã được xác minh.
+
+Trang thống kê cần:
+
+- Trực quan, hiện đại và dễ hiểu.
+- Có khả năng lọc dữ liệu theo thời gian.
+- Có biểu đồ tương tác.
+- Lấy dữ liệu động từ Supabase.
+- Đảm bảo tính chính xác của các phép thống kê.
+- Phân biệt dữ liệu thực và dữ liệu DEMO.
+- Đồng bộ với nghiệp vụ Report và Hotspot đã xây dựng ở các Prompt trước.
+- Responsive trên desktop, tablet và mobile.
+
+Không xây dựng một dashboard giả lập chỉ sử dụng dữ liệu viết cứng.
+
+### 3. PHẠM VI ĐỊA LÝ VÀ DỮ LIỆU
+
+Phạm vi quan sát của dự án:
+
+- Bao quát toàn bộ địa bàn thành phố Biên Hòa trước khi sắp xếp đơn vị hành chính.
+- Địa điểm trọng tâm: Trường THPT Tam Hiệp, Đồng Nai.
+- Dữ liệu được quản lý theo từng trường học.
+- Phạm vi bản đồ bao quát không đồng nghĩa dữ liệu phản ánh đã có trên toàn địa bàn.
+
+Yêu cầu:
+
+1. Mặc định thống kê dữ liệu của trường đang được cấu hình cho website, hiện tại là Trường THPT Tam Hiệp.
+2. Không tự tạo dữ liệu thực cho Trường THPT Tam Hiệp.
+3. Chỉ sử dụng dữ liệu thực đã được xác minh và đủ điều kiện thống kê.
+4. Không đưa dữ liệu của trường khác vào thống kê của trường hiện tại.
+5. Nếu chưa có dữ liệu thực, phải hiển thị trạng thái chưa có dữ liệu.
+6. Không tạo số liệu giả để làm cho biểu đồ trông đầy đủ.
+
+Nếu dữ liệu trường học chưa được xác nhận chính thức trong hệ thống, phải giữ trạng thái cấu hình chờ xác nhận thay vì tự điền thông tin.
+
+### 4. CẤU TRÚC TRANG THỐNG KÊ
+
+Hãy thiết kế trang theo cấu trúc sau.
+
+#### 4.1. Header và phần giới thiệu
+
+Tiêu đề chính:
+
+**THỐNG KÊ TÌNH HÌNH GIAO THÔNG QUANH TRƯỜNG HỌC**
+
+Mô tả:
+
+"Tổng hợp dữ liệu phản ánh đã được xác minh, giúp nhận diện những vấn đề cần quan tâm và theo dõi hiệu quả xử lý tại khu vực trường học."
+
+Hiển thị:
+- Tên trường đang được thống kê.
+- Phạm vi dữ liệu.
+- Thời gian cập nhật gần nhất.
+- Thời gian đang được chọn.
+
+Không sử dụng các câu khẳng định rằng giao thông đang nguy hiểm hoặc an toàn nếu dữ liệu chưa đủ căn cứ.
+
+#### 4.2. Bộ lọc thời gian
+
+Tạo bộ lọc gồm:
+
+- 7 ngày gần nhất.
+- 30 ngày gần nhất.
+- 90 ngày gần nhất.
+- Tùy chỉnh khoảng thời gian.
+
+Yêu cầu:
+
+- Ngày bắt đầu không được lớn hơn ngày kết thúc.
+- Không cho phép chọn khoảng thời gian không hợp lệ.
+- Có nút áp dụng và đặt lại bộ lọc.
+- Các biểu đồ phải cập nhật đồng bộ khi thay đổi bộ lọc.
+- Hiển thị rõ khoảng thời gian đang được thống kê.
+- Xử lý chính xác ngày tháng theo múi giờ Việt Nam (Asia/Ho_Chi_Minh).
+- Không nhầm lẫn thời điểm gửi phản ánh, thời điểm xảy ra sự việc và thời điểm xác minh.
+
+Cần xác định rõ trường thời gian được sử dụng cho từng chỉ số.
+
+#### 4.3. Bốn thẻ số liệu tổng quan
+
+Phía trên các biểu đồ, tạo bốn thẻ tổng quan:
+
+1. Tổng số phản ánh đã xác minh hợp lệ.
+2. Tổng số Hotspot đã được công khai.
+3. Tổng số Hotspot đã xử lý.
+4. Số Hotspot đang trong quá trình xử lý.
+
+Các thẻ phải:
+- Lấy dữ liệu động từ Supabase.
+- Đồng bộ với bộ lọc thời gian.
+- Có mô tả cách tính.
+- Không lấy dữ liệu DEMO.
+- Không sử dụng số liệu viết cứng.
+- Không hiển thị số liệu suy đoán.
+
+Lưu ý: Đối với chỉ số Hotspot đang công khai và đã xử lý, cần thống nhất cách tính dựa trên trạng thái hiện tại và khoảng thời gian được chọn. Không được cộng dồn sai khiến một Hotspot bị tính nhiều lần.
+
+### 5. BỐN BIỂU ĐỒ BẮT BUỘC
+
+Đây là phạm vi chức năng chính của Prompt 9. Không tự ý thêm các biểu đồ nâng cao ngoài bốn nhóm dưới đây.
+
+#### BIỂU ĐỒ 1 – SỐ PHẢN ÁNH ĐÃ XÁC MINH THEO THỜI GIAN
+
+Mục đích: Theo dõi số lượng phản ánh hợp lệ được xác minh theo từng giai đoạn.
+
+Loại biểu đồ đề xuất: Line Chart hoặc Area Chart.
+
+Dữ liệu:
+- Số Report đã xác minh theo ngày.
+- Có thể tổng hợp theo tuần.
+- Có thể tổng hợp theo tháng.
+
+Yêu cầu:
+- Hiển thị trục thời gian.
+- Hiển thị số lượng phản ánh.
+- Tooltip khi di chuột hoặc chạm.
+- Có thể chuyển đổi cách nhóm dữ liệu ngày/tuần/tháng.
+- Không tính Report đang chờ xác minh.
+- Không tính Report bị đánh dấu không hợp lệ.
+- Không tính dữ liệu DEMO.
+
+Phải xác định rõ việc thống kê dựa trên thời điểm xác minh hay thời điểm xảy ra sự việc. Mặc định biểu đồ này sử dụng thời điểm xác minh (`verified_at` hoặc trường tương đương). Nếu database hiện tại chưa có trường phù hợp, hãy báo cáo và đề xuất bổ sung trước khi thay đổi schema.
+
+#### BIỂU ĐỒ 2 – PHÂN BỐ THEO LOẠI VẤN ĐỀ
+
+Mục đích: Cho biết những nhóm vấn đề nào được phản ánh nhiều nhất.
+
+Loại biểu đồ đề xuất: Donut Chart hoặc Pie Chart.
+
+Các nhóm:
+- Ùn tắc giao thông.
+- Dừng, đỗ xe không đúng vị trí.
+- Sang đường không an toàn.
+- Khuất tầm nhìn.
+- Nguy cơ va chạm.
+- Vấn đề khác.
+
+Yêu cầu:
+- Hiển thị số lượng từng loại.
+- Hiển thị tỷ lệ phần trăm.
+- Có chú giải đầy đủ.
+- Tooltip hiển thị tên loại, số lượng và tỷ lệ.
+- Có tổng số bản ghi được tính.
+- Không hiển thị các loại không có dữ liệu như thể chúng có phát sinh.
+
+Không tự động kết luận loại vấn đề có số lượng cao nhất là nguy hiểm nhất.
+
+#### BIỂU ĐỒ 3 – PHÂN BỐ THEO KHUNG GIỜ
+
+Mục đích: Nhận diện những khoảng thời gian thường xuyên xuất hiện các vấn đề giao thông.
+
+Loại biểu đồ đề xuất: Bar Chart.
+
+Phân nhóm thời gian:
+- Sáng: 06:00–09:00.
+- Trưa: 10:30–13:30.
+- Chiều: 15:00–18:00.
+- Khung giờ khác.
+
+Yêu cầu:
+- Tổng hợp từ dữ liệu thời điểm hoặc khung giờ xảy ra sự việc của Report.
+- Không sử dụng thời điểm gửi Report thay thế thời điểm xảy ra sự việc.
+- Nếu không có thông tin thời gian xảy ra, phải phân loại riêng là "Chưa xác định".
+- Không tự suy đoán khung giờ.
+- Ghi rõ các khung giờ đang sử dụng.
+
+Các mốc giờ trên là nhóm hiển thị khởi điểm, cần đối chiếu với cấu trúc dữ liệu và quy tắc vận hành hiện tại trước khi áp dụng.
+
+#### BIỂU ĐỒ 4 – TÌNH TRẠNG XỬ LÝ HOTSPOT
+
+Mục đích: Theo dõi kết quả xử lý các điểm cần chú ý đã được xác minh và phê duyệt.
+
+Loại biểu đồ đề xuất: Bar Chart hoặc Donut Chart.
+
+Các trạng thái:
+- Chưa xử lý.
+- Đang xử lý.
+- Đã xử lý.
+
+Yêu cầu:
+- Lấy dữ liệu từ trạng thái xử lý hiện tại của Hotspot.
+- Không lấy trạng thái xác minh của Report để thay thế trạng thái Hotspot.
+- Không gộp trạng thái công khai và trạng thái xử lý.
+- Chỉ tính Hotspot thuộc phạm vi dữ liệu được phép thống kê.
+- Không tính trùng một Hotspot.
+- Có chú giải và tooltip.
+
+Phải phân biệt:
+- Trạng thái xử lý: `processing_status`.
+- Trạng thái công khai: `publication_status`.
+- Trạng thái ẩn: `is_hidden` hoặc trường tương đương.
+
+Hotspot đã ẩn không được vô tình xuất hiện trong thống kê công khai.
+
+### 6. QUY TẮC TÍNH TOÁN VÀ TRUY VẤN DỮ LIỆU
+
+Đây là phần đặc biệt quan trọng.
+
+Trước khi xây dựng biểu đồ, hãy kiểm tra schema Supabase hiện tại và xác định các bảng, trường, quan hệ thực sự tồn tại.
+
+Không tự ý giả định tên trường hoặc tự tạo các trường trùng lặp.
+
+#### 6.1. Quy tắc lọc dữ liệu
+
+Dữ liệu thực phải đáp ứng:
+
+- `is_demo = false`.
+- Report có trạng thái xác minh hợp lệ.
+- Report thuộc đúng trường học đang thống kê.
+- Hotspot phải đáp ứng các điều kiện được phép xuất hiện trong thống kê công khai.
+- Hotspot bị ẩn không được tính trong dữ liệu công khai.
+- Không làm lộ dữ liệu cá nhân của người gửi.
+
+Nếu database sử dụng tên trường khác, hãy ánh xạ theo cấu trúc hiện tại.
+
+#### 6.2. Không trộn Report và Hotspot
+
+Phải phân biệt:
+
+- Report là một phản ánh.
+- Hotspot là một điểm cần chú ý được tổng hợp.
+
+Một Hotspot có thể liên kết nhiều Report.
+
+Vì vậy:
+- Biểu đồ số phản ánh phải đếm Report hợp lệ.
+- Biểu đồ tình trạng xử lý phải đếm Hotspot.
+- Không sử dụng số Report thay cho số Hotspot.
+- Không đếm lặp Hotspot khi JOIN với nhiều Report.
+
+#### 6.3. Chống sai lệch số liệu
+
+- Không cộng các số liệu từ nhiều truy vấn có nguy cơ trùng.
+- Không tính một Report nhiều lần.
+- Không tính Report không hợp lệ.
+- Không đưa DEMO vào số liệu thực.
+- Không lấy số liệu từ biến frontend viết cứng.
+- Không dùng dữ liệu cache cũ khi đã có cập nhật mới mà không có quy tắc làm mới rõ ràng.
+
+Các phép tính phải có khả năng đối chiếu với dữ liệu nguồn.
+
+#### 6.4. Xử lý dữ liệu DEMO
+
+Nếu có dữ liệu DEMO:
+
+- Có cơ chế nhận diện riêng.
+- Có thể kiểm tra trong môi trường thử nghiệm.
+- Không đưa vào thống kê thực.
+- Không trộn vào các chỉ số tổng quan.
+- Không sử dụng để đưa ra nhận định về Trường THPT Tam Hiệp.
+- Không để dữ liệu DEMO bị nhầm với dữ liệu đã được nhà trường xác minh.
+
+Nếu cần chế độ xem DEMO riêng cho phát triển, phải tách biệt rõ ràng với chế độ thống kê công khai.
+
+### 7. GIAO DIỆN VÀ TRẢI NGHIỆM
+
+Kế thừa hoàn toàn Design System đã xây dựng ở Prompt 4.
+
+Không thiết kế lại toàn bộ website.
+
+Yêu cầu giao diện:
+
+- Hiện đại, chuyên nghiệp.
+- Màu trắng, navy, xanh dương và xanh lá theo hệ thống nhận diện.
+- Đỏ và vàng chỉ dùng cho trạng thái cảnh báo phù hợp.
+- Typography rõ ràng.
+- Card số liệu có phân cấp trực quan.
+- Biểu đồ cân đối, không quá dày đặc.
+- Chú giải dễ đọc.
+- Tooltip đẹp và dễ hiểu.
+- Khoảng cách giữa các thành phần hợp lý.
+- Không tạo quá nhiều đường viền hoặc hiệu ứng trang trí.
+- Không lạm dụng gradient.
+- Tránh giao diện AI-generated hoặc dashboard rập khuôn.
+
+### 8. ANIMATION VÀ MICRO-INTERACTIONS
+
+Kế thừa hệ thống animation đã hoàn thành ở Prompt 4 và các hiệu ứng bổ sung ở những Prompt trước.
+
+Nếu cần, hãy sử dụng các Skills liên quan đến motion design đã cài đặt.
+
+Hiệu ứng đề xuất:
+
+- Các thẻ số liệu xuất hiện nhẹ nhàng.
+- Số liệu có thể tăng từ 0 đến giá trị thật khi vào viewport.
+- Biểu đồ có animation khi tải dữ liệu lần đầu.
+- Khi thay đổi bộ lọc, biểu đồ chuyển đổi mượt mà.
+- Tooltip có hiệu ứng xuất hiện nhẹ.
+- Loading skeleton khi truy vấn dữ liệu.
+
+Nguyên tắc:
+- Không animation quá dài.
+- Không gây giật hoặc nhấp nháy.
+- Không làm giảm hiệu năng.
+- Tôn trọng `prefers-reduced-motion`.
+- Không chạy lại animation liên tục mỗi khi component render.
+
+### 9. TRẠNG THÁI GIAO DIỆN
+
+Mỗi khu vực thống kê phải có đầy đủ các trạng thái:
+
+**Loading:**
+- Skeleton cho thẻ số liệu.
+- Skeleton cho biểu đồ.
+- Không để trang trống trong lúc truy vấn.
+
+**Empty:**
+- Hiển thị thông báo chưa có dữ liệu.
+- Không tạo biểu đồ giả.
+- Có thể hướng dẫn người dùng quay lại sau.
+
+**Error:**
+- Thông báo không thể tải dữ liệu.
+- Có nút thử lại.
+- Không hiển thị số liệu cũ như dữ liệu mới.
+
+**Success:**
+- Hiển thị dữ liệu thật.
+- Có thời gian cập nhật.
+- Có chú thích phạm vi và cách tính.
+
+Nếu một biểu đồ không có dữ liệu nhưng các biểu đồ khác vẫn có dữ liệu, chỉ biểu đồ đó chuyển sang Empty, không làm mất toàn bộ trang.
+
+### 10. BẢO MẬT VÀ QUYỀN RIÊNG TƯ
+
+Trang thống kê là trang công khai.
+
+Do đó:
+
+- Chỉ truy vấn dữ liệu được phép công khai.
+- Không truy cập trực tiếp bảng nội bộ bằng quyền service role từ client.
+- Không trả về tên người gửi, email, số điện thoại hoặc thông tin nhận diện.
+- Không trả về nội dung mô tả riêng tư của Report.
+- Không trả về tọa độ chính xác của người gửi.
+- Không trả về đường dẫn ảnh gốc.
+- Không để lộ dữ liệu chờ xác minh.
+- Không để lộ Report bị từ chối.
+- Không cho phép người dùng tự thay đổi tham số truy vấn để lấy dữ liệu nội bộ.
+
+Nếu cần API hoặc RPC phục vụ thống kê công khai, phải thiết kế với quyền tối thiểu và giới hạn trường dữ liệu trả về.
+
+Không sử dụng Supabase Service Role Key ở phía client.
+
+### 11. HIỆU NĂNG
+
+- Hạn chế truy vấn lặp lại.
+- Chỉ truy vấn những trường cần thiết.
+- Tận dụng index phù hợp.
+- Không tải toàn bộ Report rồi tính toán bằng JavaScript phía client.
+- Ưu tiên truy vấn tổng hợp ở database hoặc RPC an toàn.
+- Có xử lý lỗi mạng.
+- Có cơ chế làm mới dữ liệu hợp lý.
+- Tránh re-render không cần thiết.
+- Kiểm tra hiệu năng khi số lượng dữ liệu tăng.
+
+Không tạo cache khiến dữ liệu thống kê công khai hiển thị sai hoặc chậm cập nhật mà không có thông báo phù hợp.
+
+### 12. TÍCH HỢP VỚI WEBSITE HIỆN TẠI
+
+Đây là yêu cầu bắt buộc.
+
+Trước khi sửa code:
+
+1. Kiểm tra cấu trúc workspace.
+2. Kiểm tra trang chủ.
+3. Kiểm tra Header và Footer.
+4. Kiểm tra routing hiện tại.
+5. Kiểm tra trang bản đồ.
+6. Kiểm tra trang gửi phản ánh.
+7. Kiểm tra trang tra cứu.
+8. Kiểm tra Dashboard quản trị.
+9. Kiểm tra Database và các API/RPC hiện tại.
+10. Kiểm tra Design System và animation.
+
+Yêu cầu:
+
+- Tái sử dụng các component hiện có.
+- Tái sử dụng Supabase client đã cấu hình.
+- Tái sử dụng hệ thống xác thực.
+- Tái sử dụng Design Tokens.
+- Tái sử dụng Header, Footer và navigation.
+- Không tạo một bộ giao diện độc lập.
+- Không tạo một Supabase Project mới.
+- Không tạo database mới.
+- Không thay đổi cấu trúc nghiệp vụ đã được nghiệm thu.
+- Không viết lại các trang đã hoàn thành.
+- Không làm hỏng các chức năng từ Prompt 4 đến Prompt 8.
+
+Nếu phát hiện lỗi từ giai đoạn trước có ảnh hưởng trực tiếp đến thống kê, phải báo cáo trước và phân biệt lỗi nền tảng với phạm vi Prompt 9.
+
+### 13. ANTIGRAVITY SKILLS
+
+Trước khi thực hiện, kiểm tra và đọc lại các Skills đã cài đặt có liên quan.
+
+Ưu tiên tìm và áp dụng:
+
+- `recharts` hoặc Skill chuyên về data visualization nếu có.
+- `supabase`.
+- `supabase-postgres-best-practices`.
+- `postgresql`.
+- `nextjs-best-practices`.
+- `react-best-practices`.
+- `tailwind-design-system`.
+- `ui-ux-pro-max`.
+- `better-ui`.
+- `better-interface`.
+- `clean-code`.
+- `code-reviewer`.
+
+Đối với animation, sử dụng Skill motion design đã cài đặt nếu phù hợp.
+
+Không bắt buộc phải có tất cả các Skills trên. Hãy kiểm tra danh sách thực tế trong Antigravity.
+
+Yêu cầu:
+- Đọc hướng dẫn Skill trước khi sử dụng.
+- Áp dụng Skill đúng nhiệm vụ.
+- Không gọi Skill trùng lặp không cần thiết.
+- Không tự nhận đã sử dụng Skill khi chỉ mới đọc tên.
+- Không để Skill thay đổi các nguyên tắc nghiệp vụ của dự án.
+
+Cuối giai đoạn phải báo cáo Skill nào đã thực sự được sử dụng và sử dụng ở phần nào.
+
+### 14. KIỂM THỬ VÀ NGHIỆM THU
+
+Sau khi xây dựng, phải thực hiện kiểm thử thực tế.
+
+#### 14.1. Kiểm thử dữ liệu
+
+- Kiểm tra dữ liệu DEMO không xuất hiện trong thống kê thực.
+- Kiểm tra Report pending không được tính.
+- Kiểm tra Report invalid không được tính.
+- Kiểm tra Report verified được tính đúng.
+- Kiểm tra một Hotspot liên kết nhiều Report không bị đếm trùng.
+- Kiểm tra Hotspot ẩn không xuất hiện trong thống kê công khai.
+- Kiểm tra Hotspot chưa đủ điều kiện công khai không được tính.
+- Kiểm tra bộ lọc thời gian.
+- Kiểm tra múi giờ Việt Nam.
+- Kiểm tra dữ liệu không có thời điểm xảy ra sự việc.
+- Đối chiếu số liệu trên giao diện với truy vấn nguồn.
+
+#### 14.2. Kiểm thử chức năng
+
+- Chuyển đổi bộ lọc thời gian.
+- Chọn khoảng ngày tùy chỉnh.
+- Đặt lại bộ lọc.
+- Xem tooltip.
+- Kiểm tra chú giải.
+- Kiểm tra biểu đồ trên mobile.
+- Kiểm tra biểu đồ khi không có dữ liệu.
+- Kiểm tra lỗi kết nối Supabase.
+- Kiểm tra tải lại dữ liệu.
+
+#### 14.3. Kiểm thử giao diện
+
+Kiểm tra ít nhất ở:
+- Desktop.
+- Tablet.
+- Mobile.
+
+Đặc biệt chú ý:
+- Không tràn chiều ngang.
+- Không cắt mất chú giải.
+- Tooltip không bị che.
+- Các thẻ thống kê không bị méo.
+- Bộ lọc dễ thao tác trên màn hình nhỏ.
+- Biểu đồ có thể đọc được trên điện thoại.
+
+#### 14.4. Kiểm thử bảo mật
+
+- Khách không thể truy cập Report nội bộ.
+- Khách không thể truy vấn thông tin cá nhân.
+- Khách không thể lấy dữ liệu chờ xác minh.
+- Không lộ Service Role Key.
+- Không thể dùng tham số tùy chỉnh để vượt quyền truy vấn.
+
+Không được chỉ báo cáo đã kiểm thử nếu chưa thực sự chạy các bước tương ứng.
+
+### 15. TIÊU CHÍ HOÀN THÀNH PROMPT 9
+
+Prompt 9 chỉ được coi là hoàn thành khi:
+
+1. Trang thống kê hoạt động trên routing hiện tại.
+2. Có đủ bốn biểu đồ MVP.
+3. Có bốn thẻ số liệu tổng quan.
+4. Bộ lọc thời gian hoạt động.
+5. Dữ liệu lấy từ Supabase.
+6. Các phép tính không đếm trùng.
+7. DEMO được tách biệt hoàn toàn.
+8. Report và Hotspot được thống kê đúng loại dữ liệu.
+9. Không hiển thị dữ liệu cá nhân.
+10. Hotspot không đủ điều kiện công khai không được tính.
+11. Có đầy đủ Loading, Empty, Error và Success.
+12. Giao diện kế thừa Design System.
+13. Responsive trên desktop, tablet và mobile.
+14. Animation hoạt động ổn định.
+15. Không làm hỏng các chức năng đã hoàn thành ở Prompt 4–8.
+16. Đã chạy kiểm tra build, lint, type-check và các bài test phù hợp với dự án.
+17. Có báo cáo kiểm thử và các lỗi còn tồn tại.
+
+### 16. QUY TRÌNH THỰC HIỆN
+
+Chia Prompt 9 thành các bước nội bộ:
+
+**Bước A – Audit trước khi triển khai**
+
+- Kiểm tra workspace.
+- Kiểm tra M0, M1 và Prompt 4–8.
+- Kiểm tra schema và dữ liệu hiện tại.
+- Kiểm tra các truy vấn thống kê đã tồn tại.
+- Xác định những phần có thể tái sử dụng.
+- Xác định lỗi hoặc thiếu sót ảnh hưởng trực tiếp.
+
+**Bước B – Phân tích và thiết kế**
+
+- Xác định nguồn dữ liệu cho từng chỉ số.
+- Xác định cách tính.
+- Xác định điều kiện lọc.
+- Đề xuất bố cục.
+- Đề xuất component.
+- Xác định các thay đổi database/API nếu thực sự cần thiết.
+
+**Bước C – Triển khai**
+
+- Xây dựng trang thống kê.
+- Tích hợp bốn biểu đồ.
+- Tích hợp bốn thẻ tổng quan.
+- Tích hợp bộ lọc thời gian.
+- Kết nối dữ liệu Supabase.
+- Hoàn thiện trạng thái giao diện.
+- Responsive và animation.
+
+**Bước D – Kiểm thử**
+
+- Kiểm tra nghiệp vụ.
+- Kiểm tra truy vấn.
+- Kiểm tra dữ liệu.
+- Kiểm tra giao diện.
+- Kiểm tra quyền.
+- Kiểm tra hiệu năng.
+
+**Bước E – Báo cáo và chờ nghiệm thu**
+
+Báo cáo kết quả trước khi kết thúc.
+
+### 17. QUY TẮC KHÔNG ĐƯỢC VI PHẠM
+
+- Không tự ý tạo thêm tính năng ngoài phạm vi.
+- Không xây dựng bản đồ mới.
+- Không viết lại Dashboard quản trị.
+- Không thay đổi quy tắc xác minh Report.
+- Không tự động xác định mức độ nguy cơ.
+- Không sử dụng số lượng phản ánh để tự động gán severity.
+- Không thay đổi năm điều kiện công khai Hotspot.
+- Không trộn dữ liệu DEMO với dữ liệu thật.
+- Không giả lập số liệu.
+- Không tự ý thay đổi schema đã nghiệm thu.
+- Không tạo thêm trường học giả định.
+- Không tự tạo dữ liệu thật cho Trường THPT Tam Hiệp.
+- Không coi bản đồ bao quát Biên Hòa cũ là bằng chứng dữ liệu đã phủ toàn địa bàn.
+- Không làm hỏng các chức năng trước đó.
+
+Nếu phát hiện yêu cầu Prompt 9 mâu thuẫn với cấu trúc hiện tại, hãy báo cáo và chờ xác nhận thay vì tự sửa kiến trúc.
+
+### 18. BÁO CÁO KẾT QUẢ
+
+Sau khi hoàn thành, báo cáo theo cấu trúc:
+
+**A. Tổng quan**
+- Những gì đã hoàn thành.
+- Các chức năng hoạt động thực tế.
+
+**B. Thay đổi mã nguồn**
+- File được tạo.
+- File được chỉnh sửa.
+- File được giữ nguyên.
+- Lý do thay đổi.
+
+**C. Dữ liệu và truy vấn**
+- Nguồn dữ liệu của bốn biểu đồ.
+- Công thức tính.
+- Quy tắc lọc DEMO.
+- Cách xử lý thời gian.
+- Các vấn đề về dữ liệu còn tồn tại.
+
+**D. Antigravity Skills**
+- Skill đã tìm thấy.
+- Skill đã đọc.
+- Skill thực sự đã sử dụng.
+- Nhiệm vụ từng Skill hỗ trợ.
+
+**E. Kiểm thử**
+- Lệnh đã chạy.
+- Kết quả build.
+- Kết quả lint.
+- Kết quả type-check.
+- Kết quả test.
+- Những nội dung chưa thể kiểm thử.
+
+**F. Các lỗi còn tồn tại**
+- Lỗi giao diện.
+- Lỗi dữ liệu.
+- Lỗi bảo mật.
+- Lỗi hiệu năng.
+- Các vấn đề cần tôi quyết định.
+
+**G. Nghiệm thu**
+- Tiêu chí đã đạt.
+- Tiêu chí chưa đạt.
+- Đánh giá tổng thể.
+- Đề xuất bước tiếp theo.
+
+---
+
+## YÊU CẦU BẮT ĐẦU
+
+Hãy bắt đầu bằng Bước A – Audit toàn bộ trạng thái hiện tại của SAFE SCHOOL MAP.
+
+Nếu không có lỗi nền tảng nghiêm trọng hoặc xung đột nghiệp vụ, hãy tiếp tục thực hiện Prompt 9 theo đúng phạm vi đã quy định.
+
+Nếu phát hiện vấn đề ảnh hưởng đến tính chính xác của số liệu, quyền truy cập hoặc cấu trúc dữ liệu, hãy dừng tại bước phân tích, báo cáo rõ và chờ tôi xác nhận.
+
+Mục tiêu cuối cùng là một trang thống kê công khai có dữ liệu chính xác, giao diện chuyên nghiệp, hoạt động ổn định và tích hợp liền mạch với toàn bộ website SAFE SCHOOL MAP hiện tại.
+( áp dụng các skill mà tôi đã cài )
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-11-18T16:32:17+07:00.
+
+The user's current state is as follows:
+Active Document: /ứng dụng học tập/src/app/(public)/ban-do/page.tsx (LANGUAGE_UNSPECIFIED)
+Cursor is on line: 166
+Other open documents:
+- /ứng dụng học tập/src/components/layout/Footer.tsx (LANGUAGE_UNSPECIFIED)
+- /ứng dụng học tập/src/components/layout/Header.tsx (LANGUAGE_UNSPECIFIED)
+- /ứng dụng học tập/src/app/(public)/quyen-rieng-tu/page.tsx (LANGUAGE_UNSPECIFIED)
+- /ứng dụng học tập/src/app/(public)/page.tsx (LANGUAGE_UNSPECIFIED)
+- /ứng dụng học tập/src/app/(public)/gui-phan-anh/page.tsx (LANGUAGE_UNSPECIFIED)
+</ADDITIONAL_METADATA>

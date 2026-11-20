@@ -1,0 +1,122 @@
+{
+  "timestamp": "2026-11-20T07:34:36.350Z",
+  "total": 16,
+  "passed": 16,
+  "failed": 0,
+  "demoReportId": "e9b88b3c-b199-4c02-8ce7-e89ac1fb01a1",
+  "demoTrackingCode": "SFM-3C36-EWF5",
+  "results": [
+    {
+      "id": "VAL-01",
+      "title": "Kiểm tra hợp lệ loại vấn đề (Issue Type)",
+      "status": "PASS",
+      "evidence": "Bộ lọc chỉ chấp nhận: [traffic_jam, illegal_parking, unsafe_crossing, blind_spot, collision_risk, other]. Giá trị ngoại lai bị từ chối.",
+      "notes": ""
+    },
+    {
+      "id": "VAL-02",
+      "title": "Từ chối mô tả ngắn dưới 10 ký tự",
+      "status": "PASS",
+      "evidence": "Độ dài chuỗi: \"Kẹt xe\" = 6 ký tự (< 10 ký tự). Bị từ chối với thông báo rõ ràng.",
+      "notes": ""
+    },
+    {
+      "id": "VAL-03",
+      "title": "Từ chối mô tả vượt quá 1000 ký tự",
+      "status": "PASS",
+      "evidence": "Độ dài chuỗi: 1005 ký tự (> 1000 ký tự). Bị từ chối để chống tràn bộ nhớ.",
+      "notes": ""
+    },
+    {
+      "id": "VAL-04",
+      "title": "Kiểm tra tính hợp lệ của tọa độ GPS",
+      "status": "PASS",
+      "evidence": "Tọa độ ngoài dải chuẩn [-90..90, -180..180] hoặc NaN bị phát hiện và từ chối.",
+      "notes": ""
+    },
+    {
+      "id": "VAL-05",
+      "title": "Từ chối thời điểm xảy ra trong tương lai",
+      "status": "PASS",
+      "evidence": "Thời điểm test: 2026-11-22T07:34:32.162Z (> 24h sau hiện tại). Bị từ chối.",
+      "notes": ""
+    },
+    {
+      "id": "VAL-06",
+      "title": "Kiểm duyệt MIME type và dung lượng ảnh tải lên (max 5MB)",
+      "status": "PASS",
+      "evidence": "Chỉ chấp nhận JPG/PNG/WEBP <= 5MB. Định dạng thực thi hoặc file > 5MB bị từ chối.",
+      "notes": ""
+    },
+    {
+      "id": "TRK-01",
+      "title": "Định dạng mã tra cứu SFM-XXXX-XXXX và loại bỏ ký tự dễ nhầm lẫn (0, O, 1, I)",
+      "status": "PASS",
+      "evidence": "Mã sinh ra: \"SFM-3C36-EWF5\" khớp chuẩn regex, không chứa ký tự 0, O, 1, I.",
+      "notes": ""
+    },
+    {
+      "id": "TRK-02",
+      "title": "Băm một chiều SHA-256 mã tra cứu bảo mật",
+      "status": "PASS",
+      "evidence": "Hash: be28df89599e960481190e4e35c7bec1c7aaf332d22edc853c1a307e0450d247 (64 ký tự hex chuẩn SHA-256). Bản rõ không bao giờ lưu trong DB.",
+      "notes": ""
+    },
+    {
+      "id": "DB-01",
+      "title": "Ghi nhận phản ánh mới vào bảng `reports` qua Anon Client (RLS Compliant)",
+      "status": "PASS",
+      "evidence": "Tạo thành công report id: e9b88b3c-b199-4c02-8ce7-e89ac1fb01a1 với verification_status='pending', is_demo=true.",
+      "notes": ""
+    },
+    {
+      "id": "STO-01",
+      "title": "Tải ảnh minh chứng vào private-reports theo đường dẫn an toàn {reportId}/{fileName}",
+      "status": "PASS",
+      "evidence": "Tải lên thành công: e9b88b3c-b199-4c02-8ce7-e89ac1fb01a1/1795160073176_test_evidence.png (66 bytes)",
+      "notes": ""
+    },
+    {
+      "id": "DB-02",
+      "title": "Liên kết bản ghi media trong bảng `report_media`",
+      "status": "PASS",
+      "evidence": "Ghi nhận metadata ảnh cho report e9b88b3c-b199-4c02-8ce7-e89ac1fb01a1 với moderation_status='pending', privacy_processing_status='raw'.",
+      "notes": ""
+    },
+    {
+      "id": "SEC-01",
+      "title": "Ngăn chặn truy cập công khai trực tiếp URL ảnh trong `private-reports`",
+      "status": "PASS",
+      "evidence": "HTTP GET https://dcsxtfftwsvqasxvcckj.supabase.co/storage/v1/object/public/private-reports/e9b88b3c-b199-4c02-8ce7-e89ac1fb01a1/1795160073176_test_evidence.png trả về mã 400 (Bị từ chối truy cập). Ảnh riêng tư không bị lộ ra ngoài!",
+      "notes": ""
+    },
+    {
+      "id": "SEC-02",
+      "title": "Storage RLS ngăn chặn người dùng ẩn danh tải ảnh minh chứng",
+      "status": "PASS",
+      "evidence": "Anon storage.download() bị từ chối: \"Object not found\".",
+      "notes": ""
+    },
+    {
+      "id": "SEC-03",
+      "title": "RLS Policy bảo vệ bảng `reports`: Người dùng ẩn danh không thể đọc dữ liệu thô",
+      "status": "PASS",
+      "evidence": "Anon Client truy vấn SELECT * FROM reports: Số bản ghi trả về = 0. RLS bảo vệ thành công!",
+      "notes": ""
+    },
+    {
+      "id": "SEC-04",
+      "title": "RLS Policy bảo vệ bảng `report_media`: Người dùng ẩn danh không thể xem danh sách media",
+      "status": "PASS",
+      "evidence": "Anon Client truy vấn SELECT * FROM report_media: Số bản ghi trả về = 0. RLS bảo vệ thành công!",
+      "notes": ""
+    },
+    {
+      "id": "SEC-05",
+      "title": "Cách ly phản ánh chưa duyệt: KHÔNG xuất hiện trên bản đồ công khai (public_hotspots_view)",
+      "status": "PASS",
+      "evidence": "Truy vấn public_hotspots_view trả về 1 điểm đã duyệt. Phản ánh mới \"e9b88b3c-b199-4c02-8ce7-e89ac1fb01a1\" hoàn toàn không xuất hiện trên bản đồ công khai!",
+      "notes": ""
+    }
+  ]
+}

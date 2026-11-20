@@ -1,0 +1,2503 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-19T18:47:21Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 11244194812,
+      "lat": 10.8855779,
+      "lon": 106.8598304,
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:district": "An Hòa",
+        "addr:housenumber": "336",
+        "addr:province": "Đồng Nai",
+        "addr:street": "Đường Ngô Quyền",
+        "amenity": "school",
+        "name": "Trường tiểu học An Hòa CS2"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11836636908,
+      "lat": 10.956534,
+      "lon": 106.8427783,
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:housenumber": "219",
+        "addr:postcode": "810000",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường Võ Thị Sáu",
+        "addr:subdistrict": "Phường Thống Nhất",
+        "amenity": "language_school",
+        "language:others": "yes",
+        "name": "IELTS LISA Junior & Kid - Tiếng Anh Học Thuật Cho Thiếu Niên và Thiếu Nhi",
+        "opening_hours": "24/7",
+        "operator": "IELTS LISA",
+        "operator:type": "business"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12878794399,
+      "lat": 10.9668999,
+      "lon": 106.8723797,
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học Lý Thường Kiệt (Cơ sở 2)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13003563169,
+      "lat": 11.0109538,
+      "lon": 106.8363165,
+      "tags": {
+        "addr:housenumber": "683",
+        "addr:province": "Đồng Nai",
+        "addr:street": "Đường tỉnh 768",
+        "addr:subdistrict": "Tân Triều",
+        "amenity": "dancing_school",
+        "name": "UP Dance Studio Cơ Sở Vĩnh Cửu",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "operator": "UP Dance Studio"
+      }
+    },
+    {
+      "type": "way",
+      "id": 225364394,
+      "center": {
+        "lat": 10.950015,
+        "lon": 106.8132963
+      },
+      "tags": {
+        "addr:housenumber": "314",
+        "addr:street": "Đường Cách Mạng Tháng Tám",
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Quang Vinh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 276492001,
+      "center": {
+        "lat": 10.9423266,
+        "lon": 106.8232015
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Quyết Thắng"
+      }
+    },
+    {
+      "type": "way",
+      "id": 276493102,
+      "center": {
+        "lat": 10.9575249,
+        "lon": 106.8129814
+      },
+      "tags": {
+        "addr:street": "Đường Nguyễn Văn Trỗi",
+        "amenity": "school",
+        "email": "c2.hungvuong@bienhoa.edu.vn",
+        "grades": "6-9",
+        "isced:level": "2",
+        "name": "Trường Trung học cơ sở Hùng Vương",
+        "phone": "0251 3822 602",
+        "website": "https://thcshungvuong.edu.vn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 276501066,
+      "center": {
+        "lat": 10.9812179,
+        "lon": 106.856504
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "isced:level": "2",
+        "name": "Trường Trung học cơ sở Trảng Dài",
+        "opening_hours": "Mo-Sa 07:30-11:30,14:00-17:00",
+        "website": "http://c2trangdai.edu.vn/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 276501353,
+      "center": {
+        "lat": 10.9845815,
+        "lon": 106.8696671
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường Nguyễn Khuyến",
+        "addr:subdistrict": "Phường Trảng Dài",
+        "amenity": "university",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "internet_access:ssid": "DNTU",
+        "name": "Trường Đại học Công nghệ Đồng Nai",
+        "website": "https://dntu.edu.vn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 290729087,
+      "center": {
+        "lat": 10.8833063,
+        "lon": 106.8208289
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học Tạ Uyên"
+      }
+    },
+    {
+      "type": "way",
+      "id": 290789306,
+      "center": {
+        "lat": 10.892787,
+        "lon": 106.8087627
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Trung học cơ sở Bình Thắng"
+      }
+    },
+    {
+      "type": "way",
+      "id": 291052397,
+      "center": {
+        "lat": 10.8964641,
+        "lon": 106.8178669
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học Nguyễn Khuyến"
+      }
+    },
+    {
+      "type": "way",
+      "id": 291052405,
+      "center": {
+        "lat": 10.8952994,
+        "lon": 106.7925977
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Cao đẳng Công nghệ và Nông lâm Nam Bộ"
+      }
+    },
+    {
+      "type": "way",
+      "id": 291493851,
+      "center": {
+        "lat": 10.9004756,
+        "lon": 106.7923831
+      },
+      "tags": {
+        "addr:street": "Quốc lộ 1K",
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Bình An"
+      }
+    },
+    {
+      "type": "way",
+      "id": 291550896,
+      "center": {
+        "lat": 10.8974834,
+        "lon": 106.8319523
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học Nguyễn Khuyến"
+      }
+    },
+    {
+      "type": "way",
+      "id": 292259389,
+      "center": {
+        "lat": 10.9476271,
+        "lon": 106.8114803
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Nguyễn Khắc Hiếu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 292260988,
+      "center": {
+        "lat": 10.9475124,
+        "lon": 106.8187521
+      },
+      "tags": {
+        "abandoned": "yes",
+        "addr:housenumber": "300",
+        "addr:postcode": "76106",
+        "addr:street": "Đường 30 Tháng 4",
+        "addr:subdistrict": "Khu phố 3",
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 292260998,
+      "center": {
+        "lat": 10.9452013,
+        "lon": 106.818552
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Nguyễn Du"
+      }
+    },
+    {
+      "type": "way",
+      "id": 292410457,
+      "center": {
+        "lat": 10.9679098,
+        "lon": 106.8375332
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:quarter": "Khu phố 1",
+        "addr:street": "Đường Hồ Hòa",
+        "addr:subdistrict": "Phường Tân Phong",
+        "amenity": "school",
+        "grades": "1-5",
+        "isced:level": "1",
+        "name": "Trường Tiểu học Tân Phong 1",
+        "opening_hours": "Mo-Sa 06:00-18:00",
+        "website": "http://thtanphongb.edu.vn/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 293808044,
+      "center": {
+        "lat": 10.964066,
+        "lon": 106.845642
+      },
+      "tags": {
+        "addr:housenumber": "1359",
+        "addr:street": "Đường Nguyễn Ái Quốc",
+        "amenity": "school",
+        "grades": "1-12",
+        "isced:level": "1;2;3",
+        "name": "Trường Tiểu học - Trung học cơ sở - Trung học phổ thông Bùi Thị Xuân",
+        "old_addr:housenumber": "36",
+        "phone": "0251 3819 164"
+      }
+    },
+    {
+      "type": "way",
+      "id": 293808045,
+      "center": {
+        "lat": 10.9639882,
+        "lon": 106.8464813
+      },
+      "tags": {
+        "addr:street": "Đường Nguyễn Ái Quốc",
+        "amenity": "school",
+        "email": "thcs.tantienbh@gmail.com",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Tân Tiến",
+        "phone": "+84 251 3825 468"
+      }
+    },
+    {
+      "type": "way",
+      "id": 294127331,
+      "center": {
+        "lat": 10.9018706,
+        "lon": 106.853526
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "10-12",
+        "name": "Trường Trung học phổ thông Nguyễn Hữu Cảnh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 294127332,
+      "center": {
+        "lat": 10.9075608,
+        "lon": 106.8474163
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học An Hảo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 294557079,
+      "center": {
+        "lat": 10.9532747,
+        "lon": 106.8024545
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Lạc Hồng"
+      }
+    },
+    {
+      "type": "way",
+      "id": 294557090,
+      "center": {
+        "lat": 10.9573494,
+        "lon": 106.7918591
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Tân Bửu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 568288946,
+      "center": {
+        "lat": 10.9541905,
+        "lon": 106.825971
+      },
+      "tags": {
+        "addr:housenumber": "328",
+        "addr:street": "Đường 30 Th��ng 4",
+        "amenity": "school",
+        "grades": "10-12",
+        "isced:level": "3",
+        "name": "Trường Trung học phổ thông Ngô Quyền"
+      }
+    },
+    {
+      "type": "way",
+      "id": 568288947,
+      "center": {
+        "lat": 10.9551671,
+        "lon": 106.8274795
+      },
+      "tags": {
+        "addr:housenumber": "7",
+        "addr:postcode": "76118",
+        "addr:street": "30 Tháng 4",
+        "addr:subdistrict": "Khu phố 1",
+        "amenity": "college",
+        "name": "Trường Cao đẳng Mỹ thuật trang trí Đồng Nai"
+      }
+    },
+    {
+      "type": "way",
+      "id": 568288948,
+      "center": {
+        "lat": 10.9554635,
+        "lon": 106.8278625
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:housenumber": "5",
+        "addr:postcode": "76118",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường 30 Tháng 4",
+        "addr:subdistrict": "Phường Trung Dũng",
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Trịnh Hoài Đức"
+      }
+    },
+    {
+      "type": "way",
+      "id": 568288949,
+      "center": {
+        "lat": 10.9557583,
+        "lon": 106.8282313
+      },
+      "tags": {
+        "addr:housenumber": "3",
+        "addr:street": "30 Tháng 4",
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Trần Hưng Đạo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 568387677,
+      "center": {
+        "lat": 10.9259064,
+        "lon": 106.8509116
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học An Bình"
+      }
+    },
+    {
+      "type": "way",
+      "id": 568387690,
+      "center": {
+        "lat": 10.9335052,
+        "lon": 106.8313541
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "10-12",
+        "name": "Trường Trung học phổ thông Nam Hà"
+      }
+    },
+    {
+      "type": "way",
+      "id": 580855559,
+      "center": {
+        "lat": 10.9703476,
+        "lon": 106.8846822
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "isced:level": "1",
+        "min_age": "6",
+        "name": "Trường Tiểu học Hoàng Hoa Thám"
+      }
+    },
+    {
+      "type": "way",
+      "id": 581237887,
+      "center": {
+        "lat": 10.9921,
+        "lon": 106.8646784
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "isced:level": "1",
+        "name": "Trường Tiểu học Trảng Dài"
+      }
+    },
+    {
+      "type": "way",
+      "id": 581237906,
+      "center": {
+        "lat": 10.9829777,
+        "lon": 106.8679978
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Hà Huy Giáp"
+      }
+    },
+    {
+      "type": "way",
+      "id": 581237909,
+      "center": {
+        "lat": 10.9865427,
+        "lon": 106.8667013
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường Nguyễn Khuyến",
+        "addr:subdistrict": "Phường Trảng Dài",
+        "amenity": "school",
+        "email": "c2.truongsa@bienhoa.edu.vn",
+        "grades": "6-9",
+        "isced:level": "2",
+        "name": "Trường Trung học Cơ sở Trường Sa",
+        "phone": "+84 2518875877",
+        "website": "https://truongsabienhoa.edu.vn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 581617906,
+      "center": {
+        "lat": 10.9690113,
+        "lon": 106.8906492
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Lý Tự Trọng"
+      }
+    },
+    {
+      "type": "way",
+      "id": 581617916,
+      "center": {
+        "lat": 10.969893,
+        "lon": 106.8919025
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Võ Thị Sáu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 581925658,
+      "center": {
+        "lat": 10.9645705,
+        "lon": 106.9059035
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Hòa Bình"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582097169,
+      "center": {
+        "lat": 10.9604884,
+        "lon": 106.9068126
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Võ Trường Toản"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582263751,
+      "center": {
+        "lat": 10.9698308,
+        "lon": 106.9108342
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Chu Văn An"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582479932,
+      "center": {
+        "lat": 10.9524288,
+        "lon": 106.85928
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Tam Hiệp A"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582479955,
+      "center": {
+        "lat": 10.9535595,
+        "lon": 106.8535125
+      },
+      "tags": {
+        "amenity": "college",
+        "name": "Trường Trung cấp Kinh tế - Kỹ thuật số 2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582479959,
+      "center": {
+        "lat": 10.953504,
+        "lon": 106.8514846
+      },
+      "tags": {
+        "amenity": "school",
+        "isced:level": "1",
+        "name": "Trường Mầm non Tân Mai"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582479972,
+      "center": {
+        "lat": 10.9590161,
+        "lon": 106.8436893
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Nguyễn An Ninh",
+        "opening_hours": "Mo-Sa 06:30-18:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582479982,
+      "center": {
+        "lat": 10.9589663,
+        "lon": 106.8615234
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Đồng Nai",
+        "short_name": "DNU",
+        "website": "https://dnpu.edu.vn/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582526014,
+      "center": {
+        "lat": 10.9323067,
+        "lon": 106.8510717
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở An Bình"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582526024,
+      "center": {
+        "lat": 10.9369025,
+        "lon": 106.8530233
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Lê Thị Vân"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582526035,
+      "center": {
+        "lat": 10.9375706,
+        "lon": 106.8562979
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Trần Quốc Tuấn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582526038,
+      "center": {
+        "lat": 10.9344907,
+        "lon": 106.8615059
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Đồng Nai (cơ sở 3)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582526106,
+      "center": {
+        "lat": 10.8935457,
+        "lon": 106.8647984
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Hòa Hưng"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582916888,
+      "center": {
+        "lat": 10.9585991,
+        "lon": 106.864277
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Lê Quang Định"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582916911,
+      "center": {
+        "lat": 10.9578456,
+        "lon": 106.8632976
+      },
+      "tags": {
+        "addr:housenumber": "12",
+        "addr:street": "Đường Lê Quý Đôn",
+        "amenity": "school",
+        "grades": "10-12",
+        "name": "Trường Trung học phổ thông chuyên Lương Thế Vinh",
+        "phone": "+84 251 3828 107",
+        "website": "https://chuyenluongthevinh.edu.vn/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 583265496,
+      "center": {
+        "lat": 10.9625121,
+        "lon": 106.8800957
+      },
+      "tags": {
+        "addr:housenumber": "370",
+        "addr:street": "Xa lộ Hà Nội",
+        "amenity": "college",
+        "name": "Trường Cao đẳng Kỹ thuật – Công nghệ Đồng Nai (cơ sở 4)",
+        "old_name": "Trường Trung cấp nghề 26 tháng 3",
+        "website": "https://dncet.edu.vn/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 583265497,
+      "center": {
+        "lat": 10.9626355,
+        "lon": 106.8788242
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Bùi Hữu Nghĩa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 583265498,
+      "center": {
+        "lat": 10.9633409,
+        "lon": 106.879216
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Nguyễn Đình Chiểu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 583265504,
+      "center": {
+        "lat": 10.9592217,
+        "lon": 106.8717824
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-12",
+        "isced:level": "1;2;3",
+        "name": "Trường Tiểu học-Trung học cơ sở-Trung học phổ thông Đinh Tiên Hoàng"
+      }
+    },
+    {
+      "type": "way",
+      "id": 583265518,
+      "center": {
+        "lat": 10.9579611,
+        "lon": 106.8728088
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "isced:level": "1",
+        "name": "Trường Tiểu học Lý Thường Kiệt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 583265532,
+      "center": {
+        "lat": 10.9573814,
+        "lon": 106.873346
+      },
+      "tags": {
+        "amenity": "college",
+        "name": "Trường Cao đẳng Thống kê II"
+      }
+    },
+    {
+      "type": "way",
+      "id": 583401693,
+      "center": {
+        "lat": 10.9204498,
+        "lon": 106.8842789
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Nguyễn Chí Thanh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 583401720,
+      "center": {
+        "lat": 10.9394954,
+        "lon": 106.8748459
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Long Bình"
+      }
+    },
+    {
+      "type": "way",
+      "id": 583401727,
+      "center": {
+        "lat": 10.9404,
+        "lon": 106.8740947
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Phan Đình Phùng"
+      }
+    },
+    {
+      "type": "way",
+      "id": 583643597,
+      "center": {
+        "lat": 10.8986658,
+        "lon": 106.8550307
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Long Bình Tân"
+      }
+    },
+    {
+      "type": "way",
+      "id": 583928357,
+      "center": {
+        "lat": 10.8912767,
+        "lon": 106.8509456
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Long Bình Tân"
+      }
+    },
+    {
+      "type": "way",
+      "id": 604998671,
+      "center": {
+        "lat": 10.8921897,
+        "lon": 106.8306631
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học Tạ Uyên"
+      }
+    },
+    {
+      "type": "way",
+      "id": 604998672,
+      "center": {
+        "lat": 10.897873,
+        "lon": 106.8177073
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Trung học cơ sở Bình Thắng B"
+      }
+    },
+    {
+      "type": "way",
+      "id": 604998675,
+      "center": {
+        "lat": 10.8921094,
+        "lon": 106.8115363
+      },
+      "tags": {
+        "amenity": "college",
+        "name": "Cao đẳng Công nghệ cao Đồng An",
+        "name:en": "Binh An Polytechnic"
+      }
+    },
+    {
+      "type": "way",
+      "id": 606087422,
+      "center": {
+        "lat": 10.8986532,
+        "lon": 106.810073
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Kim Đồng"
+      }
+    },
+    {
+      "type": "way",
+      "id": 606087423,
+      "center": {
+        "lat": 10.8994861,
+        "lon": 106.808148
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Bình An"
+      }
+    },
+    {
+      "type": "way",
+      "id": 606087424,
+      "center": {
+        "lat": 10.9038939,
+        "lon": 106.8046651
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học Đoàn Thị Điểm"
+      }
+    },
+    {
+      "type": "way",
+      "id": 727388340,
+      "center": {
+        "lat": 10.9458292,
+        "lon": 106.8280292
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Thống Nhất"
+      }
+    },
+    {
+      "type": "way",
+      "id": 727389323,
+      "center": {
+        "lat": 10.9521039,
+        "lon": 106.863798
+      },
+      "tags": {
+        "addr:postcode": "76109",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường Đặng Đức Thuật",
+        "addr:subdistrict": "Phường Tam Hiệp",
+        "amenity": "school",
+        "grades": "10-12",
+        "name": "Trường Trung học phổ thông Trấn Biên",
+        "website": "https://tranbien.edu.vn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 972258793,
+      "center": {
+        "lat": 10.9539646,
+        "lon": 106.8359035
+      },
+      "tags": {
+        "addr:housenumber": "88",
+        "addr:street": "Đường Nguyễn Văn Hoa",
+        "amenity": "college",
+        "name": "Trường Cao đẳng Kỹ thuật - Công nghệ Đồng Nai",
+        "opening_hours": "Mo-Su 06:00-21:00",
+        "website": "https://dncet.edu.vn/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 972258794,
+      "center": {
+        "lat": 10.9467898,
+        "lon": 106.819327
+      },
+      "tags": {
+        "addr:housenumber": "397",
+        "addr:postcode": "76107",
+        "addr:street": "Đường 30 Tháng 4",
+        "addr:subdistrict": "Khu phố 4",
+        "amenity": "school",
+        "name": "Trường Quốc tế Bắc Mỹ SNA Marianapolis"
+      }
+    },
+    {
+      "type": "way",
+      "id": 972503633,
+      "center": {
+        "lat": 10.9588215,
+        "lon": 106.8388872
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:housenumber": "207B",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường Phạm Văn Thuận",
+        "addr:subdistrict": "Phường Tân Tiến",
+        "amenity": "driving_school",
+        "landuse": "commercial",
+        "name": "Trung tâm Dạy nghề Lái xe Sài Gòn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 974310700,
+      "center": {
+        "lat": 11.0120565,
+        "lon": 106.84236
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Tân Phú"
+      }
+    },
+    {
+      "type": "way",
+      "id": 974310701,
+      "center": {
+        "lat": 11.0125389,
+        "lon": 106.8531399
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "10-12",
+        "name": "Trường Trung học phổ thông Vĩnh Cửu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 974943190,
+      "center": {
+        "lat": 10.9606354,
+        "lon": 106.8393698
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Tân Tiến"
+      }
+    },
+    {
+      "type": "way",
+      "id": 974943195,
+      "center": {
+        "lat": 10.9599939,
+        "lon": 106.8390821
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:housenumber": "207B",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường Phạm Văn Thuận",
+        "addr:subdistrict": "Phường Tân Tiến",
+        "amenity": "driving_school",
+        "landuse": "commercial",
+        "name": "Trung tâm Dạy nghề Lái xe Sài Gòn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 974991939,
+      "center": {
+        "lat": 10.9623331,
+        "lon": 106.883836
+      },
+      "tags": {
+        "amenity": "driving_school",
+        "landuse": "commercial",
+        "name": "Trường Dạy lái xe Thái Sơn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 974991940,
+      "center": {
+        "lat": 10.9602205,
+        "lon": 106.8817225
+      },
+      "tags": {
+        "amenity": "driving_school",
+        "landuse": "commercial",
+        "layer": "1",
+        "name": "Trung tâm Đào tạo Sát hạch Lái xe Hải Vân"
+      }
+    },
+    {
+      "type": "way",
+      "id": 975252860,
+      "center": {
+        "lat": 10.9567997,
+        "lon": 106.8497745
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "10-12",
+        "name": "Trường Trung học phổ thông Lê Quý Đôn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 975648451,
+      "center": {
+        "lat": 10.9494156,
+        "lon": 106.8249534
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học-Trung học cơ sở-Trung học phổ thông Lê Quý Đôn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 975648454,
+      "center": {
+        "lat": 10.949048,
+        "lon": 106.8252181
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học-Trung học cơ sở-Trung học phổ thông Thái Bình Dương"
+      }
+    },
+    {
+      "type": "way",
+      "id": 975648455,
+      "center": {
+        "lat": 10.9491292,
+        "lon": 106.8242337
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học-Trung học cơ sở-Trung học phổ thông Song ngữ Á Châu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 976232543,
+      "center": {
+        "lat": 10.9242803,
+        "lon": 106.8238332
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Trần Văn Ơn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 976232544,
+      "center": {
+        "lat": 10.9239798,
+        "lon": 106.8230354
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Ngô Gia Tự"
+      }
+    },
+    {
+      "type": "way",
+      "id": 976232566,
+      "center": {
+        "lat": 10.9152741,
+        "lon": 106.825215
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Nguyễn Văn Trỗi"
+      }
+    },
+    {
+      "type": "way",
+      "id": 976818175,
+      "center": {
+        "lat": 10.9655546,
+        "lon": 106.8373702
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "isced:level": "1",
+        "name": "Trường Tiểu học Tân Phong 1 (Cơ sở 2)",
+        "opening_hours": "Mo-Fr 07:00-18:00",
+        "phone": "+84 91 375 13 35"
+      }
+    },
+    {
+      "type": "way",
+      "id": 976996638,
+      "center": {
+        "lat": 10.9460306,
+        "lon": 106.8647047
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Tam Hòa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 976996639,
+      "center": {
+        "lat": 10.9456181,
+        "lon": 106.8652417
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Tam Hòa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 976996641,
+      "center": {
+        "lat": 10.9373815,
+        "lon": 106.8615315
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Bình Đa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 976996642,
+      "center": {
+        "lat": 10.9351506,
+        "lon": 106.8630948
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Bình Đa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 976996643,
+      "center": {
+        "lat": 10.9330667,
+        "lon": 106.8634318
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Chính trị Thành phố Đồng Nai"
+      }
+    },
+    {
+      "type": "way",
+      "id": 976996644,
+      "center": {
+        "lat": 10.9331867,
+        "lon": 106.8648903
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Phổ thông Thực hành Sư phạm"
+      }
+    },
+    {
+      "type": "way",
+      "id": 977146586,
+      "center": {
+        "lat": 10.9717383,
+        "lon": 106.8734052
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Nguyễn Tri Phương"
+      }
+    },
+    {
+      "type": "way",
+      "id": 977146587,
+      "center": {
+        "lat": 10.9722477,
+        "lon": 106.8736995
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Nguyễn Tri Phương (cơ sở 2)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 977156604,
+      "center": {
+        "lat": 10.9492828,
+        "lon": 106.8545461
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "isced:level": "2",
+        "name": "Trường Trung học cơ sở Tam Hiệp"
+      }
+    },
+    {
+      "type": "way",
+      "id": 977156614,
+      "center": {
+        "lat": 10.9415068,
+        "lon": 106.8615054
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "10-12",
+        "name": "Trường Trung học phổ thông Tam Hiệp"
+      }
+    },
+    {
+      "type": "way",
+      "id": 977769749,
+      "center": {
+        "lat": 10.9366487,
+        "lon": 106.8335151
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Hiệp Hòa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 977769750,
+      "center": {
+        "lat": 10.9367345,
+        "lon": 106.8340823
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Hiệp Hòa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 977812706,
+      "center": {
+        "lat": 10.9567492,
+        "lon": 106.8360558
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Thống Nhất (cơ sở 2)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 977812707,
+      "center": {
+        "lat": 10.9537183,
+        "lon": 106.8283593
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Thống Nhất"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978014756,
+      "center": {
+        "lat": 10.9361466,
+        "lon": 106.8052038
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Hóa An"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978019635,
+      "center": {
+        "lat": 10.9675312,
+        "lon": 106.8512651
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:subdistrict": "Phường Tân Phong",
+        "amenity": "school",
+        "email": "c1.phanchutrinh@bienhoa.edu.vn",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Phan Chu Trinh",
+        "phone": "090 864 7771"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978035267,
+      "center": {
+        "lat": 10.9663732,
+        "lon": 106.8401722
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Phan Chu Trinh (cơ sở 2)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978342176,
+      "center": {
+        "lat": 10.9559834,
+        "lon": 106.801236
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-12",
+        "name": "Trường Tiểu học-Trung học cơ sở-Trung học phổ thông Song ngữ Lạc Hồng"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978342190,
+      "center": {
+        "lat": 10.9551128,
+        "lon": 106.8021861
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Lạc Hồng (cơ sở 2)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978353544,
+      "center": {
+        "lat": 10.9685587,
+        "lon": 106.795856
+      },
+      "tags": {
+        "amenity": "school",
+        "layer": "1",
+        "name": "Trường Trung cấp nghề Giao thông Vận tải Đồng Nai"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978353551,
+      "center": {
+        "lat": 10.9636506,
+        "lon": 106.7880487
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Lạc Hồng (cơ sở 3)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978353555,
+      "center": {
+        "lat": 10.9627408,
+        "lon": 106.7895476
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Lạc Hồng (cơ sở Dược)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978353565,
+      "center": {
+        "lat": 10.957168,
+        "lon": 106.7890044
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Lạc Hồng (cơ sở 5)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978353568,
+      "center": {
+        "lat": 10.9572869,
+        "lon": 106.7907362
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Lạc Hồng (cơ sở 6)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978353570,
+      "center": {
+        "lat": 10.9551227,
+        "lon": 106.7939157
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Tân Bửu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978353578,
+      "center": {
+        "lat": 10.9561081,
+        "lon": 106.7980007
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Lạc Hồng (cơ sở 4)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978756572,
+      "center": {
+        "lat": 10.9686268,
+        "lon": 106.8802316
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "10-12",
+        "name": "Trường Trung học phổ thông Lê Hồng Phong"
+      }
+    },
+    {
+      "type": "way",
+      "id": 979453537,
+      "center": {
+        "lat": 10.9815558,
+        "lon": 106.8581437
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:subdistrict": "Phường Trảng Dài",
+        "amenity": "school",
+        "grades": "1-5",
+        "isced:level": "1",
+        "name": "Trường Tiểu học Nguyễn Thái Học"
+      }
+    },
+    {
+      "type": "way",
+      "id": 979946794,
+      "center": {
+        "lat": 10.9817296,
+        "lon": 106.7996565
+      },
+      "tags": {
+        "addr:district": "Huyện Vĩnh Cửu",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường tỉnh 768",
+        "addr:subdistrict": "Xã Bình Hòa",
+        "amenity": "school",
+        "grades": "1-5",
+        "isced:level": "1",
+        "name": "Trường Tiểu học Bình Hòa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 979951540,
+      "center": {
+        "lat": 11.0153648,
+        "lon": 106.8578461
+      },
+      "tags": {
+        "amenity": "college",
+        "name": "Trường Cao đẳng Cơ giới và Thủy lợi (cơ sở Đào tạo)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 981456135,
+      "center": {
+        "lat": 10.9539785,
+        "lon": 106.8143673
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:province": "Đồng Nai",
+        "addr:street": "Huỳnh Văn Lũy",
+        "addr:subdistrict": "Phường Quang Vinh",
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Lê Văn Tám"
+      }
+    },
+    {
+      "type": "way",
+      "id": 981465483,
+      "center": {
+        "lat": 10.9483465,
+        "lon": 106.8277211
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Mầm non Thống Nhất"
+      }
+    },
+    {
+      "type": "way",
+      "id": 981597471,
+      "center": {
+        "lat": 10.9459581,
+        "lon": 106.8310012
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trung tâm Giáo dục Thường xuyên Thành phố Đồng Nai"
+      }
+    },
+    {
+      "type": "way",
+      "id": 982007362,
+      "center": {
+        "lat": 10.9391964,
+        "lon": 106.860648
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Bình Đa (cơ sở 2)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 983637694,
+      "center": {
+        "lat": 10.9073749,
+        "lon": 106.8571277
+      },
+      "tags": {
+        "amenity": "college",
+        "name": "Trường Cao đẳng Công nghệ và Quản trị Sonadezi"
+      }
+    },
+    {
+      "type": "way",
+      "id": 983637699,
+      "center": {
+        "lat": 10.9077347,
+        "lon": 106.8582674
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "10-12",
+        "name": "Trường Trung học phổ thông Lê Quý Đôn (cơ sở Long Bình Tân)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 986516012,
+      "center": {
+        "lat": 10.8928517,
+        "lon": 106.8655815
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Nguyễn Thị Sáu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 994913543,
+      "center": {
+        "lat": 10.9643637,
+        "lon": 106.845473
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:housenumber": "1351",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường Nguyễn Ái Quốc",
+        "addr:subdistrict": "Phường Tân Mai",
+        "amenity": "school",
+        "grades": "1-2",
+        "name": "Trường Song ngữ Bùi Thị Xuân"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997832519,
+      "center": {
+        "lat": 10.8947787,
+        "lon": 106.8619464
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học An Hòa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997864043,
+      "center": {
+        "lat": 10.9115279,
+        "lon": 106.8271134
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Kim Đồng"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997864048,
+      "center": {
+        "lat": 10.9642756,
+        "lon": 106.902897
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Nguyễn Huệ"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997864053,
+      "center": {
+        "lat": 10.9521598,
+        "lon": 106.8767605
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Phan Bội Châu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997864068,
+      "center": {
+        "lat": 10.9816094,
+        "lon": 106.895007
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Phù Đổng"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997888981,
+      "center": {
+        "lat": 10.9421117,
+        "lon": 106.8593384
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Tam Hiệp B"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997889010,
+      "center": {
+        "lat": 10.9548142,
+        "lon": 106.7799483
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Tân Hạnh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997889013,
+      "center": {
+        "lat": 10.9553512,
+        "lon": 106.7802485
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Tân Hạnh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997889019,
+      "center": {
+        "lat": 10.9692673,
+        "lon": 106.8885086
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Trần Quốc Toản"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997930657,
+      "center": {
+        "lat": 10.9736528,
+        "lon": 106.9024943
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Thánh Tâm"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997945112,
+      "center": {
+        "lat": 10.9775188,
+        "lon": 106.9059484
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học-Trung học cơ sở-Trung học phổ thông Tân Hòa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 998287953,
+      "center": {
+        "lat": 10.9729563,
+        "lon": 106.8744731
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Hoàng Diệu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 998287959,
+      "center": {
+        "lat": 10.9515198,
+        "lon": 106.8759735
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Hoàng Văn Thụ"
+      }
+    },
+    {
+      "type": "way",
+      "id": 998287984,
+      "center": {
+        "lat": 10.9450849,
+        "lon": 106.7979507
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Tân An"
+      }
+    },
+    {
+      "type": "way",
+      "id": 998405941,
+      "center": {
+        "lat": 10.9674259,
+        "lon": 106.897426
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "10-12",
+        "name": "Trường Trung học phổ thông Nguyễn Trãi"
+      }
+    },
+    {
+      "type": "way",
+      "id": 999357976,
+      "center": {
+        "lat": 10.9557175,
+        "lon": 106.8432629
+      },
+      "tags": {
+        "addr:housenumber": "314/16A",
+        "addr:street": "Đường Phạm Văn Thuận",
+        "amenity": "school",
+        "grades": "10-12",
+        "internet_access": "wlan",
+        "isced:level": "3",
+        "name": "Trường Trung học phổ thông Nguyễn Khuyến",
+        "opening_hours": "Mo-Fr 06:00-17:00",
+        "phone": "0251 3829 678",
+        "website": "http://thpt.nguyenkhuyen.edu.vn/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1001375696,
+      "center": {
+        "lat": 10.9297855,
+        "lon": 106.8036526
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "10-12",
+        "name": "Trường Trung học phổ thông Chu Văn An"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1001445065,
+      "center": {
+        "lat": 10.9554605,
+        "lon": 106.8210458
+      },
+      "tags": {
+        "amenity": "college",
+        "name": "Trường Trung cấp Văn hóa Nghệ thuật Đồng Nai"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1004634371,
+      "center": {
+        "lat": 10.9547776,
+        "lon": 106.8488906
+      },
+      "tags": {
+        "amenity": "school",
+        "grades": "6-9",
+        "name": "Trường Trung học cơ sở Lê Lợi"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1005104501,
+      "center": {
+        "lat": 10.9117044,
+        "lon": 106.8796215
+      },
+      "tags": {
+        "amenity": "school",
+        "landuse": "military",
+        "name": "Trường Đại học Trần Đại Nghĩa (Cơ sở 2)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1009624031,
+      "center": {
+        "lat": 10.9635984,
+        "lon": 106.8988344
+      },
+      "tags": {
+        "amenity": "college",
+        "name": "Trường Cao đẳng Y tế Đồng Nai"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1015150470,
+      "center": {
+        "lat": 10.955507,
+        "lon": 106.8257818
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Cambridge Biên Hoà (Cơ sở A)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1015150472,
+      "center": {
+        "lat": 10.9555229,
+        "lon": 106.8254989
+      },
+      "tags": {
+        "amenity": "language_school",
+        "building": "yes",
+        "name": "Cambridge Biên Hoà (Cơ sở B)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1015368266,
+      "center": {
+        "lat": 10.8980981,
+        "lon": 106.8818889
+      },
+      "tags": {
+        "amenity": "college",
+        "name": "Trường Cao đẳng Lê Quý Đôn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1018259218,
+      "center": {
+        "lat": 10.9521337,
+        "lon": 106.8200626
+      },
+      "tags": {
+        "addr:housenumber": "71/12",
+        "addr:postcode": "76118",
+        "addr:street": "Đường Hưng Đạo Vương",
+        "addr:subdistrict": "Khu phố 4",
+        "amenity": "school",
+        "name": "Trung tâm Bồi dưỡng Chính trị Thành phố Biên Hoà"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1022205766,
+      "center": {
+        "lat": 10.962997,
+        "lon": 106.839465
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:housenumber": "1475",
+        "addr:postcode": "76115",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường Nguyễn Ái Quốc",
+        "addr:subdistrict": "Phường Tân Tiến",
+        "amenity": "university",
+        "name": "Trường Đại học Công nghệ Miền Đông (cơ sở 1)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1026567598,
+      "center": {
+        "lat": 10.9044363,
+        "lon": 106.8570293
+      },
+      "tags": {
+        "amenity": "university",
+        "education": "university",
+        "name": "Phân hiệu Trường Đại học Mở Thành phố Hồ Chí Minh tại Đồng Nai"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1033814259,
+      "center": {
+        "lat": 10.9504365,
+        "lon": 106.8159579
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trung tâm Giáo dục Thường xuyên Thành phố Đồng Nai (cơ sở 2A)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1047084814,
+      "center": {
+        "lat": 10.9223363,
+        "lon": 106.8248288
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Trung học cơ sở Toàn Diện"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1060249554,
+      "center": {
+        "lat": 10.9013561,
+        "lon": 106.8069043
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Trung học phổ thông Bình An"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1060376000,
+      "center": {
+        "lat": 10.9450208,
+        "lon": 106.8209092
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trung tâm Giáo dục Thường xuyên Thành phố Đồng Nai (cơ sở 5)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1062310684,
+      "center": {
+        "lat": 10.955061,
+        "lon": 106.825734
+      },
+      "tags": {
+        "addr:housenumber": "12",
+        "addr:postcode": "76118",
+        "addr:street": "Đường 30 Tháng 4",
+        "addr:subdistrict": "Khu phố 3",
+        "amenity": "music_school",
+        "building": "yes",
+        "name": "Đức Thương"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1062310687,
+      "center": {
+        "lat": 10.954992,
+        "lon": 106.8256353
+      },
+      "tags": {
+        "addr:housenumber": "18",
+        "addr:postcode": "76118",
+        "addr:street": "Đường 30 Tháng 4",
+        "addr:subdistrict": "Khu phố 3",
+        "amenity": "language_school",
+        "building": "yes",
+        "name": "Cambridge Bách Khoa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1063434827,
+      "center": {
+        "lat": 10.9505475,
+        "lon": 106.8154351
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trung tâm Giáo dục Thường xuyên Thành phố Đồng Nai (cơ sở 2B)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1065162216,
+      "center": {
+        "lat": 11.0194021,
+        "lon": 106.8519442
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học Chu Văn An"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1074817062,
+      "center": {
+        "lat": 10.9961466,
+        "lon": 106.8060072
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Trung học cơ sở Võ Trường Toản"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1160808051,
+      "center": {
+        "lat": 10.9684262,
+        "lon": 106.8562163
+      },
+      "tags": {
+        "amenity": "language_school",
+        "language": "ko",
+        "name": "Trung tâm Hàn Ngữ PaLi Cơ sở 3",
+        "opening_hours": "06:00-22:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1174707209,
+      "center": {
+        "lat": 10.9712023,
+        "lon": 106.8532942
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:housenumber": "700",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường Đồng Khởi",
+        "addr:subdistrict": "Phường Trảng Dài",
+        "amenity": "language_school",
+        "building": "yes",
+        "building:levels": "1",
+        "email": "anhmygroupdongkhoi@gmail.com",
+        "language": "en",
+        "name": "Anh Mỹ Group Biên Hòa",
+        "opening_hours": "Mo-We,Fr-Su 08:00-12:00,17:00-19:00",
+        "phone": "+84 251 6585 868",
+        "roof:shape": "flat"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1178316026,
+      "center": {
+        "lat": 11.0056264,
+        "lon": 106.8411507
+      },
+      "tags": {
+        "amenity": "school",
+        "barrier": "fence",
+        "name": "Trường Tiểu học Tân Phú"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1178316084,
+      "center": {
+        "lat": 10.9687827,
+        "lon": 106.8422781
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Trung học cơ sở Tân Phong"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1178320412,
+      "center": {
+        "lat": 10.9609522,
+        "lon": 106.8088579
+      },
+      "tags": {
+        "amenity": "school",
+        "barrier": "fence",
+        "name": "Trường Trung học cơ sở Nguyễn Bỉnh Khiêm"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1178322763,
+      "center": {
+        "lat": 10.9846517,
+        "lon": 106.8366501
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:quarter": "Khu phố 11A",
+        "addr:subdistrict": "Phường Tân Phong",
+        "amenity": "school",
+        "grades": "1-5",
+        "isced:level": "1",
+        "name": "Trường Tiểu học Tân Phong 2",
+        "phone": "0878 266 277"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1220501699,
+      "center": {
+        "lat": 10.9567555,
+        "lon": 106.8428306
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:housenumber": "288",
+        "addr:postcode": "810000",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường Võ Thị Sáu",
+        "addr:subdistrict": "Phường Thống Nhất",
+        "amenity": "language_school",
+        "building": "school",
+        "language": "en",
+        "language:vi": "yes",
+        "name": "IELTS LISA",
+        "operator": "LISA",
+        "operator:type": "business"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1274793313,
+      "center": {
+        "lat": 10.9565455,
+        "lon": 106.8427766
+      },
+      "tags": {
+        "addr:city": "Thành phố Biên Hòa",
+        "addr:housenumber": "219",
+        "addr:postcode": "810000",
+        "addr:province": "Tỉnh Đồng Nai",
+        "addr:street": "Đường Võ Thị Sáu",
+        "addr:subdistrict": "Phường Thống Nhất",
+        "amenity": "language_school",
+        "building": "yes",
+        "language": "en",
+        "language:vi": "yes",
+        "name": "IELTS LISA Junior & Kid - Tiếng Anh Học Thuật Cho Thiếu Niên và Thiếu Nhi",
+        "opening_hours": "24/7",
+        "operator": "IELTS LISA",
+        "operator:type": "business"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1344367065,
+      "center": {
+        "lat": 10.9087361,
+        "lon": 106.7934249
+      },
+      "tags": {
+        "amenity": "school",
+        "isced:level": "1",
+        "name": "Trường Tiểu học Đông An (Cơ sở Tân An)",
+        "operator": "Phòng Giáo dục và Đào tạo Thành phố Dĩ An"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1395648406,
+      "center": {
+        "lat": 10.9532531,
+        "lon": 106.8522225
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học Tân Mai (Cơ sở 2)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1412753777,
+      "center": {
+        "lat": 10.9482185,
+        "lon": 106.8321072
+      },
+      "tags": {
+        "addr:housenumber": "213-215",
+        "addr:street": "Đường Võ Thị Sáu",
+        "amenity": "language_school",
+        "building": "yes",
+        "name": "VUS",
+        "old_addr:housenumber": "K20-21",
+        "operator": "VUS"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1412969134,
+      "center": {
+        "lat": 10.9483662,
+        "lon": 106.8305522
+      },
+      "tags": {
+        "addr:housenumber": "J29",
+        "addr:street": "Đường N11",
+        "amenity": "language_school",
+        "building": "yes",
+        "name": "Cleverlearn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1413018167,
+      "center": {
+        "lat": 11.0111688,
+        "lon": 106.8308112
+      },
+      "tags": {
+        "amenity": "school",
+        "isced:level": "2",
+        "name": "Trường Trung học Cơ sở Thạnh Phú"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1413021092,
+      "center": {
+        "lat": 11.0104896,
+        "lon": 106.8264627
+      },
+      "tags": {
+        "amenity": "school",
+        "isced:level": "1",
+        "name": "Trường Tiểu học Tân Phú"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1418966281,
+      "center": {
+        "lat": 10.8895752,
+        "lon": 106.8020009
+      },
+      "tags": {
+        "amenity": "school",
+        "education": "school",
+        "name": "Trung tâm Giáo dục Quốc phòng và An ninh",
+        "operator": "Đại học Quốc gia Thành phố Hồ Chí Minh",
+        "operator:type": "university"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1419376885,
+      "center": {
+        "lat": 10.8909279,
+        "lon": 106.8064693
+      },
+      "tags": {
+        "addr:housenumber": "300",
+        "addr:street": "Thống Nhất",
+        "amenity": "driving_school",
+        "landuse": "commercial",
+        "name": "Trung tâm Đào tạo & Sát hạch lái xe Đồng An",
+        "operator": "Trường Cao đẳng Công nghệ cao Đồng An"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1462585404,
+      "center": {
+        "lat": 10.9732341,
+        "lon": 106.84536
+      },
+      "tags": {
+        "addr:housenumber": "B3-B4",
+        "addr:place": "Khu dân cư Tân Phong",
+        "amenity": "language_school",
+        "education": "language_school",
+        "name": "Anh Ngữ Thiên Thần"
+      }
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  
+  /* =========================================================================
+     EMIL KOWALSKI MOTION DESIGN SYSTEM TOKENS
+     - Custom curves: ease-out with strong snappy punch
+     - Hero entrance: tuned for intentional, elegant marketing entrance (600-750ms)
+     - UI interactions: sub-200ms responsive feedback
+     ========================================================================= */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  
+  --dur-micro: 160ms;
+  --dur-ui: 220ms;
+  --dur-enter: 650ms;
+}
+
+body {
+  color: #0F172A;
+  background-color: #F8FAFC;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fix z-index stacking context for Leaflet in Next.js */
+.leaflet-pane {
+  z-index: 10 !important;
+}
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 20 !important;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================================================================
+   KEYFRAMES & ANIMATIONS (GPU Compositor Off-Main-Thread)
+   ========================================================================= */
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes radarSweep {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* Hero Entrance: 24px deliberate upward glide with soft scale from 0.96 */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes drawerEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes modalEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes subtleBreathing {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.animate-breathing {
+  animation: subtleBreathing 2.5s ease-in-out infinite;
+}
+
+/* Hero Stagger Sequences (Tuned for deliberate, clearly perceived entrance) */
+.animate-hero-1 {
+  animation: heroFadeUp 600ms var(--ease-out) 0ms both;
+}
+.animate-hero-2 {
+  animation: heroFadeUp 650ms var(--ease-out) 120ms both;
+}
+.animate-hero-3 {
+  animation: heroFadeUp 650ms var(--ease-out) 240ms both;
+}
+.animate-hero-4 {
+  animation: heroFadeUp 650ms var(--ease-out) 360ms both;
+}
+.animate-hero-visual {
+  animation: heroFadeUp 750ms var(--ease-out) 480ms both;
+}
+
+/* Mobile drawer sequence */
+.animate-drawer {
+  animation: drawerEnter 280ms var(--ease-drawer) both;
+}
+
+/* Modal and Backdrop animations */
+.animate-modal-enter {
+  animation: modalEnter 260ms var(--ease-out) both;
+  transform-origin: center;
+}
+.animate-backdrop-enter {
+  animation: fadeIn 260ms var(--ease-out) both;
+}
+
+/* =========================================================================
+   SCROLL REVEAL UTILITY (Intersection Observer driven)
+   ========================================================================= */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 550ms var(--ease-out), transform 550ms var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* =========================================================================
+   PROMPT 4.3 – ADVANCED UI ELEMENT EFFECTS
+   - Tactile button press & hover lift
+   - Card sheen & soft glow
+   - Interactive link underline expand
+   - Input focus ambient glow
+   ========================================================================= */
+
+/* Underline expand from left to right on hover */
+.interactive-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  transition: background-size var(--dur-ui) var(--ease-out);
+}
+.interactive-link:hover {
+  background-size: 100% 1.5px;
+}
+
+/* Subtle light sheen gliding across card on hover */
+.card-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.card-sheen::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.07) 50%,
+    transparent 60%
+  );
+  transform: rotate(25deg) translateY(-100%);
+  transition: transform 700ms var(--ease-out);
+  pointer-events: none;
+}
+.card-sheen:hover::after {
+  transform: rotate(25deg) translateY(100%);
+}
+
+/* Input Focus Glow Ring */
+.input-focus-glow:focus {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Button & Card Tactile Physics */
+@media (hover: hover) and (pointer: fine) {
+  .btn-tactile {
+    transition: transform var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out), background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+  }
+  .btn-tactile:hover {
+    transform: translateY(-2px);
+  }
+  .btn-tactile:active {
+    transform: translateY(0) scale(0.96);
+  }
+
+  .card-hover-lift {
+    transition: transform var(--dur-ui) var(--ease-out), box-shadow var(--dur-ui) var(--ease-out), border-color var(--dur-ui) var(--ease-out);
+  }
+  .card-hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.07), 0 8px 12px -6px rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* =========================================================================
+   3D ELEVATED BLOCK SYSTEM (HIỆU ỨNG KHỐI NỔI BẬT & CHIỀU SÂU THỊ GIÁC)
+   - Multi-layered soft ambient occlusion shadows
+   - Dimensional top specular edge highlight
+   - Clean floating hover displacement without layout shift
+   ========================================================================= */
+.block-elevated {
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow:
+    0 1px 3px 0 rgba(15, 23, 42, 0.04),
+    0 8px 24px -4px rgba(15, 23, 42, 0.08),
+    0 20px 48px -8px rgba(15, 23, 42, 0.05);
+  transition: transform var(--dur-ui) var(--ease-out), box-shadow var(--dur-ui) var(--ease-out), border-color var(--dur-ui) var(--ease-out);
+}
+
+.block-elevated:hover {
+  transform: translateY(-4px);
+  border-color: rgba(203, 213, 225, 1);
+  box-shadow:
+    0 1px 3px 0 rgba(15, 23, 42, 0.06),
+    0 16px 36px -6px rgba(15, 23, 42, 0.12),
+    0 28px 60px -10px rgba(37, 99, 235, 0.14);
+}
+
+.block-elevated-dark {
+  background: linear-gradient(145deg, #0f172a 0%, #0b1329 100%);
+  border: 1px solid rgba(51, 65, 85, 0.7);
+  box-shadow:
+    0 1px 2px 0 rgba(0, 0, 0, 0.3),
+    0 12px 32px -4px rgba(0, 0, 0, 0.4),
+    0 24px 60px -12px rgba(11, 19, 41, 0.6);
+  transition: transform var(--dur-ui) var(--ease-out), box-shadow var(--dur-ui) var(--ease-out), border-color var(--dur-ui) var(--ease-out);
+}
+
+.block-elevated-dark:hover {
+  transform: translateY(-3px);
+  border-color: rgba(96, 165, 250, 0.45);
+  box-shadow:
+    0 1px 2px 0 rgba(0, 0, 0, 0.4),
+    0 20px 44px -4px rgba(0, 0, 0, 0.5),
+    0 32px 72px -12px rgba(37, 99, 235, 0.22);
+}
+
+/* Subtle inset depth for sub-blocks */
+.block-inset-dark {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(51, 65, 85, 0.65);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================================
+   CRUD TABLE ROW FEEDBACK ANIMATIONS
+   - Subtle pulse flash when a row is verified, approved, or modified
+   - Staggered entry for newly mounted items
+   ========================================================================= */
+@keyframes highlightFlash {
+  0% {
+    background-color: rgba(37, 99, 235, 0.22);
+    box-shadow: inset 0 0 0 1.5px rgba(37, 99, 235, 0.4);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 0 transparent;
+  }
+}
+
+@keyframes rowEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-row-highlight {
+  animation: highlightFlash 1.6s var(--ease-out) both;
+}
+
+.animate-row-enter {
+  animation: rowEnter 240ms var(--ease-out) both;
+}
+
+/* =========================================================================
+   ZOOM-RESPONSIVE MAP MARKER SCALING (Tự động thu nhỏ khi phóng xa chống rối)
+   - Zoom <= 12 (Toàn cảnh TP): Thu nhỏ gọn ~50%, giảm bóng mờ, không chồng lấn
+   - Zoom 13-14 (Cấp phường/khu vực): Thu nhỏ vừa ~75%
+   - Zoom >= 15 (Cận cảnh): Kích thước đầy đủ 100%
+   - Hover: Phóng to tức thì để người dùng xem nhanh thông tin trường
+   ========================================================================= */
+
+/* Khi phóng xa (Toàn cảnh Biên Hòa, zoom <= 12) */
+.map-zoom-far .school-marker-pin {
+  transform: scale(0.5);
+  transform-origin: bottom center;
+  box-shadow: 0 2px 4px -1px rgba(15, 23, 42, 0.4) !important;
+}
+
+.map-zoom-far .school-marker-pin:hover {
+  transform: scale(0.95) translateY(-3px) !important;
+  box-shadow: 0 10px 18px -3px rgba(15, 23, 42, 0.5) !important;
+  z-index: 1000 !important;
+}
+
+.map-zoom-far .hotspot-marker-pin {
+  transform: scale(0.55);
+  transform-origin: bottom center;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+.map-zoom-far .hotspot-marker-pin:hover {
+  transform: scale(0.95) translateY(-3px) !important;
+  box-shadow: 0 8px 16px -2px rgba(0, 0, 0, 0.4) !important;
+  z-index: 1000 !important;
+}
+
+/* Khi phóng vừa (Cấp cụm phường / quận, zoom 13-14) */
+.map-zoom-mid .school-marker-pin {
+  transform: scale(0.75);
+  transform-origin: bottom center;
+  box-shadow: 0 4px 8px -2px rgba(15, 23, 42, 0.4) !important;
+}
+
+.map-zoom-mid .school-marker-pin:hover {
+  transform: scale(1.05) translateY(-2px) !important;
+  box-shadow: 0 12px 20px -3px rgba(15, 23, 42, 0.5) !important;
+  z-index: 1000 !important;
+}
+
+.map-zoom-mid .hotspot-marker-pin {
+  transform: scale(0.8);
+  transform-origin: bottom center;
+  box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+.map-zoom-mid .hotspot-marker-pin:hover {
+  transform: scale(1.05) translateY(-2px) !important;
+  box-shadow: 0 8px 16px -2px rgba(0, 0, 0, 0.4) !important;
+  z-index: 1000 !important;
+}
+
+/* Khi phóng gần (Cận cảnh cổng trường & tim đường, zoom >= 15) */
+.map-zoom-near .school-marker-pin {
+  transform: scale(1);
+  transform-origin: bottom center;
+}
+
+.map-zoom-near .school-marker-pin:hover {
+  transform: scale(1.1) translateY(-2px) !important;
+  box-shadow: 0 14px 24px -4px rgba(15, 23, 42, 0.5) !important;
+  z-index: 1000 !important;
+}
+
+.map-zoom-near .hotspot-marker-pin {
+  transform: scale(1);
+  transform-origin: bottom center;
+}
+
+.map-zoom-near .hotspot-marker-pin:hover {
+  transform: scale(1.12) translateY(-2px) !important;
+  box-shadow: 0 10px 18px -2px rgba(0, 0, 0, 0.4) !important;
+  z-index: 1000 !important;
+}
+
+/* Trường trọng tâm thí điểm nổi bật */
+.school-marker-focal {
+  border-color: #F87171 !important;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.4), 0 8px 14px -2px rgba(15, 23, 42, 0.5) !important;
+}
+
+/* =========================================================================
+   ACCESSIBILITY: PREFERS-REDUCED-MOTION
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-hero-1,
+  .animate-hero-2,
+  .animate-hero-3,
+  .animate-hero-4,
+  .animate-hero-visual,
+  .animate-drawer,
+  .animate-modal-enter,
+  .animate-backdrop-enter,
+  .animate-pulse-glow,
+  .animate-radar-sweep,
+  .animate-breathing,
+  .animate-row-highlight,
+  .animate-row-enter {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .btn-tactile:hover,
+  .btn-tactile:active,
+  .block-elevated:hover,
+  .block-elevated-dark:hover {
+    transform: none !important;
+  }
+
+  .card-hover-lift:hover {
+    transform: none !important;
+  }
+
+  .card-sheen::after {
+    display: none !important;
+  }
+
+  .interactive-link {
+    background-size: 100% 1.5px !important;
+    transition: none !important;
+  }
+}
