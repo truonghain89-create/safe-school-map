@@ -64,10 +64,15 @@ export default function LeafletMap({
 
   const [mapLoaded, setMapLoaded] = useState(false);
   const [currentZoom, setCurrentZoom] = useState(BIEN_HOA_GEO.defaultZoom);
+  const [isLegendOpen, setIsLegendOpen] = useState(false);
 
   // 1. Khởi tạo bản đồ Leaflet
   useEffect(() => {
     let isMounted = true;
+    let resizeObserver: ResizeObserver | null = null;
+    let t1: NodeJS.Timeout | null = null;
+    let t2: NodeJS.Timeout | null = null;
+    let t3: NodeJS.Timeout | null = null;
 
     async function initMap() {
       if (!mapContainerRef.current || mapInstanceRef.current) return;
@@ -85,16 +90,17 @@ export default function LeafletMap({
       });
 
       // Tạo bản đồ giới hạn phạm vi Biên Hòa cũ (OSM Relation 7154127)
+      // Sử dụng vùng đệm mở rộng và viscosity thấp (0.1) để tránh bị kẹt kéo/thao tác trên màn hình máy tính rộng
       const map = L.map(mapContainerRef.current, {
         center: [BIEN_HOA_GEO.center.lat, BIEN_HOA_GEO.center.lng],
         zoom: BIEN_HOA_GEO.defaultZoom,
         minZoom: BIEN_HOA_GEO.minZoom,
         maxZoom: BIEN_HOA_GEO.maxZoom,
         maxBounds: [
-          [BIEN_HOA_GEO.bbox.south - 0.05, BIEN_HOA_GEO.bbox.west - 0.05],
-          [BIEN_HOA_GEO.bbox.north + 0.05, BIEN_HOA_GEO.bbox.east + 0.05],
+          [10.45, 106.35],
+          [11.45, 107.35],
         ],
-        maxBoundsViscosity: 0.75,
+        maxBoundsViscosity: 0.1,
         zoomControl: false, // Sử dụng controls tùy chỉnh dễ tiếp cận
       });
 
@@ -157,12 +163,34 @@ export default function LeafletMap({
       mapInstanceRef.current = map;
       if (isMounted) setMapLoaded(true);
 
-      // Invalidate size để bảo đảm toàn bộ tile map render trọn vẹn
-      setTimeout(() => {
+      // Theo dõi thay đổi kích thước vùng chứa (đặc biệt quan trọng trên điện thoại khi xoay màn hình hoặc đổi tab)
+      if (typeof ResizeObserver !== 'undefined' && mapContainerRef.current) {
+        resizeObserver = new ResizeObserver(() => {
+          if (mapInstanceRef.current) {
+            mapInstanceRef.current.invalidateSize();
+          }
+        });
+        resizeObserver.observe(mapContainerRef.current);
+      }
+
+      // Invalidate size nhiều mốc thời gian để bảo đảm toàn bộ tile map render 100% trọn vẹn
+      t1 = setTimeout(() => {
         if (isMounted && mapInstanceRef.current) {
           mapInstanceRef.current.invalidateSize();
         }
-      }, 150);
+      }, 100);
+
+      t2 = setTimeout(() => {
+        if (isMounted && mapInstanceRef.current) {
+          mapInstanceRef.current.invalidateSize();
+        }
+      }, 400);
+
+      t3 = setTimeout(() => {
+        if (isMounted && mapInstanceRef.current) {
+          mapInstanceRef.current.invalidateSize();
+        }
+      }, 1000);
     }
 
     initMap();
@@ -171,6 +199,12 @@ export default function LeafletMap({
 
     return () => {
       isMounted = false;
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
+      if (t1) clearTimeout(t1);
+      if (t2) clearTimeout(t2);
+      if (t3) clearTimeout(t3);
       if (mapInstanceRef.current) {
         mapInstanceRef.current.remove();
         mapInstanceRef.current = null;
@@ -632,17 +666,25 @@ export default function LeafletMap({
         </div>
       </div>
 
-      {/* Map Legend Overlay */}
-      <div className="absolute bottom-4 left-4 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-md border border-slate-200/90 max-w-xs text-xs space-y-2 pointer-events-auto">
-        <div className="font-bold text-navy-950 flex items-center justify-between border-b border-slate-100 pb-1.5">
+      {/* Map Legend Overlay (Thu gọn trên mobile để không chắn cảm ứng, mở rộng trên desktop) */}
+      <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-md border border-slate-200/90 max-w-[240px] sm:max-w-xs text-xs space-y-2 pointer-events-auto transition-all">
+        <div
+          className="font-bold text-navy-950 flex items-center justify-between border-b border-slate-100 pb-1.5 cursor-pointer sm:cursor-default"
+          onClick={() => setIsLegendOpen(!isLegendOpen)}
+        >
           <span className="flex items-center gap-1.5">
             <Compass className="w-3.5 h-3.5 text-blue-600" />
             Chú giải ký hiệu
           </span>
-          <span className="text-[10px] text-slate-400 font-mono">Zoom: {currentZoom}</span>
+          <div className="flex items-center gap-1.5">
+            <span className="text-[10px] text-slate-400 font-mono">Zoom: {currentZoom}</span>
+            <span className="sm:hidden text-[10px] text-blue-600 font-semibold underline">
+              {isLegendOpen ? 'Đóng' : 'Xem'}
+            </span>
+          </div>
         </div>
 
-        <div className="space-y-1.5 text-[11px]">
+        <div className={`space-y-1.5 text-[11px] ${isLegendOpen ? 'block' : 'hidden sm:block'}`}>
           <div className="flex items-center gap-2">
             <div className="w-5 h-5 rounded-lg bg-navy-950 text-white flex items-center justify-center text-[10px] font-bold shadow-xs">
               🏫

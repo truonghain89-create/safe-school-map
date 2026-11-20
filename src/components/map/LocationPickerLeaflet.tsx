@@ -119,6 +119,22 @@ export default function LocationPickerLeaflet({
       markerRef.current = marker;
       mapInstanceRef.current = map;
       if (isMounted) setMapLoaded(true);
+
+      // Tự động invalidate size khi container thay đổi kích thước
+      if (typeof ResizeObserver !== 'undefined' && mapContainerRef.current) {
+        const ro = new ResizeObserver(() => {
+          if (mapInstanceRef.current) {
+            mapInstanceRef.current.invalidateSize();
+          }
+        });
+        ro.observe(mapContainerRef.current);
+      }
+
+      setTimeout(() => {
+        if (isMounted && mapInstanceRef.current) {
+          mapInstanceRef.current.invalidateSize();
+        }
+      }, 150);
     }
 
     initMap();
